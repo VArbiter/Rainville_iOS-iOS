@@ -1,0 +1,31 @@
+/* 
+  File.strings
+  Rainville
+
+  Created by 冯明庆 on 17/1/2.
+  Copyright © 2017年 冯明庆. All rights reserved.
+*/
+
+"_CC_LANGUAGE_" = "简体中文" ;
+
+"_CC_APP_NAME_" = "聆雨" ;
+"_CC_APP_DESP_" = "且听细雨，勿湿衣襟" ;
+
+"_CC_RAIN_POEM_" = "虞美人·听雨\n蒋捷（宋）\n\n少年听雨歌楼上，红烛昏罗帐。\n壮年听雨客舟中，江阔云低断雁叫西风。\n\n而今听雨僧庐下，鬓已星星也。\n悲欢离合总无情，一任阶前点滴到天明。" ;
+
+"_CC_PLAY_" = "播放" ;
+"_CC_STOP_" = "停止" ;
+"_CC_SET_CLOSE_TIMER_" = "设定在" ;
+"_CC_SET_CLOSE_MINUTES_" = "分钟以后，停止播放" ;
+
+"_CC_HINT_KEEP_RUNNING_" = "且听细雨，勿湿衣襟" ;
+"_CC_HINT_HEADPHONE_" = "为了不打扰其他人\n请插入耳机聆听" ;
+"_CC_HINT_FOCUS_PLAY_REMAIN_" = "再点击 %d 次使用手机外放播放" ;
+"_CC_HINT_PLAY_WITH_SPEAKER_" = "现在您直接使用手机外放播放了" ;
+"_CC_HINT_WELCOME_USE_RAINVILLE_" = "感谢您使用「聆雨」" ;
+"_CC_HINT_USE_RAINVILLE_SUMMARY_" = "\n\n您可以连续多次点击红色的耳机按钮，\n开启直接使用扬声器播放选项。" ;
+"_CC_HINT_PANEL_INTRO_" = "现在，您有更多的选择" ;
+"_CC_HINT_PANEL_INTRO_SUMMARY_" = "\n\n您可以选择多种不同类型的雨声、\n左右滑动可以设置定时播放选项。" ;
+
+"_CC_VERSION_" = "版本" ;
+

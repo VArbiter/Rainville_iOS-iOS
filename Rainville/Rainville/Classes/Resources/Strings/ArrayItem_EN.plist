@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>Default</string>
+	<string>Fairy Rain</string>
+	<string>Bedroom</string>
+	<string>Under The Porch</string>
+	<string>Distant Storm</string>
+	<string>Getting Wet</string>
+	<string>Only Rumble</string>
+	<string>Under The Leaves</string>
+	<string>Dark Rain</string>
+	<string>Jungle Lodge</string>
+	<string>Brown Noise</string>
+	<string>Pink Noise</string>
+	<string>White Noise</string>
+	<string>Grey Noise</string>
+	<string>60 Hz</string>
+	<string>125 Hz</string>
+	<string>250 Hz</string>
+	<string>500 Hz</string>
+	<string>1000 Hz</string>
+	<string>2000 Hz</string>
+	<string>4000 Hz</string>
+	<string>8000 Hz</string>
+</array>
+</plist>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>默认</string>
+	<string>细雨</string>
+	<string>庭院深深</string>
+	<string>门厅走廊</string>
+	<string>暴雨将至</string>
+	<string>润雨</string>
+	<string>夏日雷雨</string>
+	<string>荷塘</string>
+	<string>乌云压顶</string>
+	<string>丛林</string>
+	<string>棕噪音</string>
+	<string>粉噪音</string>
+	<string>白噪音</string>
+	<string>灰噪音</string>
+	<string>60 Hz</string>
+	<string>125 Hz</string>
+	<string>250 Hz</string>
+	<string>500 Hz</string>
+	<string>1000 Hz</string>
+	<string>2000 Hz</string>
+	<string>4000 Hz</string>
+	<string>8000 Hz</string>
+</array>
+</plist>
