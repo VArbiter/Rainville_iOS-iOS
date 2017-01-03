@@ -12,6 +12,9 @@
 
 @interface CCMainHeaderView ()
 @property (weak, nonatomic) IBOutlet UILabel *labelUpDown;
+@property (weak, nonatomic) IBOutlet UIView *viewBackGround;
+
+- (void) ccSetBackGroundOpaque : (BOOL) isOpaque ;
 
 @end
 
@@ -32,6 +35,17 @@
     [_labelUpDown ccElegantIconsWithFontSize:25.0f
                                   withString:(isUp ? @"6" : @"7")];
     [_labelUpDown sizeToFit];
+    
+    [self ccSetBackGroundOpaque:!isUp];
 }
+
+- (void) ccSetBackGroundOpaque : (BOOL) isOpaque {
+    ccWeakSelf;
+    [UIView animateWithDuration:0.5f animations:^{
+        pSelf.viewBackGround.alpha = isOpaque ? 0.65f : 0.95f;
+    }];
+}
+
+
 
 @end

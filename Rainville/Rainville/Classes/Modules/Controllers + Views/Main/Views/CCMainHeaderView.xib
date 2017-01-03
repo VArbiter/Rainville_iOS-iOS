@@ -11,10 +11,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view alpha="0.94999999999999996" contentMode="scaleToFill" id="iN0-l3-epB" customClass="CCMainHeaderView">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CCMainHeaderView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QP-BT-ssL">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2f-qV-7Oi">
                     <rect key="frame" x="166" y="646" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -22,13 +26,18 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="0QP-BT-ssL" secondAttribute="bottom" id="75A-WP-ANl"/>
                 <constraint firstAttribute="bottom" secondItem="Z2f-qV-7Oi" secondAttribute="bottom" id="Krt-qQ-cgg"/>
+                <constraint firstItem="0QP-BT-ssL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dLT-jL-vsj"/>
                 <constraint firstItem="Z2f-qV-7Oi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hgH-Gw-NdT"/>
+                <constraint firstItem="0QP-BT-ssL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vrv-wi-0Vn"/>
+                <constraint firstAttribute="trailing" secondItem="0QP-BT-ssL" secondAttribute="trailing" id="zT0-bl-yCZ"/>
             </constraints>
             <connections>
                 <outlet property="labelUpDown" destination="Z2f-qV-7Oi" id="hR4-6g-Gwg"/>
+                <outlet property="viewBackGround" destination="0QP-BT-ssL" id="yux-cr-z8H"/>
             </connections>
         </view>
     </objects>

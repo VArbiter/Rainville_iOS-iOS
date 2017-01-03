@@ -8,11 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-/// DEBUG Console output
 #ifndef __OPTMIZE__
-#define CCLog(fmt,...) NSLog((@"\n %s \n %s %d \n" fmt),__FILE__,__func__,__LINE__,##__VA_ARGS__)
+    #define CCLog(fmt,...) NSLog((@"\n %s \n %s %d \n" fmt),__FILE__,__func__,__LINE__,##__VA_ARGS__)
 #else
-#define CCLog(...) /* */
+    #define CCLog(...) /* */
 #endif
 
 #define ccWeakSelf __weak typeof(&*self) pSelf = self

@@ -73,7 +73,7 @@
 }
 #pragma mark - UITableViewDelegate
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return _CC_ScreenHeight() / 3.0f;
+    return _CC_ScreenHeight() * 0.3f;
 }
 
 #pragma mark - System

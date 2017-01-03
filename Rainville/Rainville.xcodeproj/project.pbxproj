@@ -25,7 +25,6 @@
 		3725678E1DFE86D80035E193 /* _9.wav in Resources */ = {isa = PBXBuildFile; fileRef = 372567841DFE86D80035E193 /* _9.wav */; };
 		375066851DF85D1C00B539D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 375066841DF85D1C00B539D1 /* main.m */; };
 		375066901DF85D1C00B539D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3750668F1DF85D1C00B539D1 /* Assets.xcassets */; };
-		375066931DF85D1C00B539D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375066911DF85D1C00B539D1 /* LaunchScreen.storyboard */; };
 		378160D01E19560B00960928 /* NSURL+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160CF1E19560B00960928 /* NSURL+CCExtension.m */; };
 		378160D31E19580100960928 /* UIImage+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160D21E19580100960928 /* UIImage+CCExtension.m */; };
 		378160DC1E19689200960928 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160DB1E19689200960928 /* MBProgressHUD.m */; };
@@ -48,6 +47,9 @@
 		37BA5DD91E1BE71700827DC5 /* CCMainScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DD81E1BE71700827DC5 /* CCMainScrollCell.m */; };
 		37BA5DDC1E1BEB7900827DC5 /* CCMainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DDB1E1BEB7900827DC5 /* CCMainHeaderView.m */; };
 		37BA5DDE1E1BEB8800827DC5 /* CCMainHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37BA5DDD1E1BEB8800827DC5 /* CCMainHeaderView.xib */; };
+		37BA5DE81E1C012700827DC5 /* CCLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DE61E1C012700827DC5 /* CCLaunchViewController.m */; };
+		37BA5DE91E1C012700827DC5 /* CCLaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37BA5DE71E1C012700827DC5 /* CCLaunchViewController.xib */; };
+		37BA5DEB1E1C039800827DC5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BA5DEA1E1C039800827DC5 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,7 +77,6 @@
 		375066801DF85D1C00B539D1 /* Rainville.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rainville.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		375066841DF85D1C00B539D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3750668F1DF85D1C00B539D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		375066921DF85D1C00B539D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		375066941DF85D1C00B539D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		378160CE1E19560B00960928 /* NSURL+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+CCExtension.h"; sourceTree = "<group>"; };
 		378160CF1E19560B00960928 /* NSURL+CCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+CCExtension.m"; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		378160D21E19580100960928 /* UIImage+CCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CCExtension.m"; sourceTree = "<group>"; };
 		378160DA1E19689200960928 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		378160DB1E19689200960928 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		378160E11E196FD300960928 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		378160E61E1970E700960928 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		378160E81E1970E900960928 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		378160EA1E19726000960928 /* ArrayItem_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ArrayItem_EN.plist; sourceTree = "<group>"; };
@@ -118,6 +118,10 @@
 		37BA5DDA1E1BEB7900827DC5 /* CCMainHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMainHeaderView.h; sourceTree = "<group>"; };
 		37BA5DDB1E1BEB7900827DC5 /* CCMainHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMainHeaderView.m; sourceTree = "<group>"; };
 		37BA5DDD1E1BEB8800827DC5 /* CCMainHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMainHeaderView.xib; sourceTree = "<group>"; };
+		37BA5DE51E1C012700827DC5 /* CCLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLaunchViewController.h; sourceTree = "<group>"; };
+		37BA5DE61E1C012700827DC5 /* CCLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLaunchViewController.m; sourceTree = "<group>"; };
+		37BA5DE71E1C012700827DC5 /* CCLaunchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLaunchViewController.xib; sourceTree = "<group>"; };
+		37BA5DEA1E1C039800827DC5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37BA5DEB1E1C039800827DC5 /* MessageUI.framework in Frameworks */,
 				37BA5DBE1E1BB8F900827DC5 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +190,7 @@
 		372567601DFE84110035E193 /* Controllers + Views */ = {
 			isa = PBXGroup;
 			children = (
+				37BA5DDF1E1BFFC900827DC5 /* Launch */,
 				372567611DFE84110035E193 /* Main */,
 			);
 			path = "Controllers + Views";
@@ -261,7 +267,6 @@
 			children = (
 				372567561DFE84110035E193 /* Classes */,
 				3750668F1DF85D1C00B539D1 /* Assets.xcassets */,
-				375066911DF85D1C00B539D1 /* LaunchScreen.storyboard */,
 				375066941DF85D1C00B539D1 /* Info.plist */,
 				375066831DF85D1C00B539D1 /* Supporting Files */,
 			);
@@ -346,6 +351,7 @@
 		37BA5DBC1E1BB8F900827DC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37BA5DEA1E1C039800827DC5 /* MessageUI.framework */,
 				37BA5DBD1E1BB8F900827DC5 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
@@ -406,6 +412,16 @@
 				37BA5DDD1E1BEB8800827DC5 /* CCMainHeaderView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		37BA5DDF1E1BFFC900827DC5 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				37BA5DE51E1C012700827DC5 /* CCLaunchViewController.h */,
+				37BA5DE61E1C012700827DC5 /* CCLaunchViewController.m */,
+				37BA5DE71E1C012700827DC5 /* CCLaunchViewController.xib */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,12 +497,12 @@
 				37BA5DDE1E1BEB8800827DC5 /* CCMainHeaderView.xib in Resources */,
 				3725678D1DFE86D80035E193 /* _8.wav in Resources */,
 				372567891DFE86D80035E193 /* _4.wav in Resources */,
-				375066931DF85D1C00B539D1 /* LaunchScreen.storyboard in Resources */,
 				378160F11E1972FB00960928 /* ArrayItem_CH.plist in Resources */,
 				378160F81E197E3900960928 /* InfoPlist.strings in Resources */,
 				372567861DFE86D80035E193 /* _1.wav in Resources */,
 				372567851DFE86D80035E193 /* _0.wav in Resources */,
 				3725678E1DFE86D80035E193 /* _9.wav in Resources */,
+				37BA5DE91E1C012700827DC5 /* CCLaunchViewController.xib in Resources */,
 				378161011E1987E200960928 /* weather.otf in Resources */,
 				375066901DF85D1C00B539D1 /* Assets.xcassets in Resources */,
 				378160E51E1970E700960928 /* Localizable.strings in Resources */,
@@ -508,6 +524,7 @@
 				37BA5DCE1E1BC30000827DC5 /* CCLocalizedHelper.m in Sources */,
 				372567741DFE84280035E193 /* CCBaseViewController.m in Sources */,
 				37BA5DCF1E1BC30000827DC5 /* CCMainHandler.m in Sources */,
+				37BA5DE81E1C012700827DC5 /* CCLaunchViewController.m in Sources */,
 				372567781DFE84590035E193 /* CCMainViewController.m in Sources */,
 				37BA5DD51E1BD05400827DC5 /* UIColor+CCExtension.m in Sources */,
 				37BA5DB81E1BAEA800827DC5 /* UILabel+CCExtension.m in Sources */,
@@ -530,15 +547,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		375066911DF85D1C00B539D1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				375066921DF85D1C00B539D1 /* Base */,
-				378160E11E196FD300960928 /* zh-Hans */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		378160E71E1970E700960928 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
