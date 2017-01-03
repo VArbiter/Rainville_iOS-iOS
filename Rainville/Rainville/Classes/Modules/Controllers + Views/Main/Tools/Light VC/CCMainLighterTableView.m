@@ -55,7 +55,8 @@
         cell.textLabel.highlightedTextColor = _CC_HexColor(0x333333);
     }
     
-    [cell.textLabel ccMusketWithString:_arrayData[indexPath.row]];
+    [cell.textLabel ccMusketWithFontSize:15.0f
+                              withString:_arrayData[indexPath.row]];
     
     return cell;
 }
@@ -109,6 +110,10 @@ _CC_DETECT_DEALLOC_
     _CC_Safe_Async_Block(^{
         pSelf.block(indexPath.row);
     });
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return _CC_ScreenHeight() * 0.3f / 6.0f ;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {

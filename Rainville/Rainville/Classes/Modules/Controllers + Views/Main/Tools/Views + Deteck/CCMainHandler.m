@@ -134,6 +134,7 @@ static BOOL _isFontRegistSuccess = NO;
     tableView.separatorColor = _CC_HexColor(0x434D5B);
     tableView.showsHorizontalScrollIndicator = NO;
     tableView.bounces = NO;
+    [tableView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
     
     if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
         [tableView setSeparatorInset:UIEdgeInsetsZero];
