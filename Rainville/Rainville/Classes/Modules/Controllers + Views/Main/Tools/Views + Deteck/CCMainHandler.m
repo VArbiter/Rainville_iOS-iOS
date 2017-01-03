@@ -95,7 +95,6 @@ static BOOL _isFontRegistSuccess = NO;
 #pragma mark - Views
 + (UIScrollView *) ccCreateMainBottomScrollViewWithView {
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,
-//                                                                             _CC_ScreenHeight() - _CC_ScreenHeight() * 0.3f,
                                                                               0,
                                                                              _CC_ScreenWidth(),
                                                                              _CC_ScreenHeight() * 0.3f)];

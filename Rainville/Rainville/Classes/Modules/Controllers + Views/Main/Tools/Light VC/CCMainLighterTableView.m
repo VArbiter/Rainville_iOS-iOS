@@ -48,13 +48,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"_CC_CELL_ID_"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"_CC_CELL_ID_"];
-        [cell.textLabel ccMusketWithString:_arrayData[indexPath.row]];
         cell.textLabel.textColor = _CC_HexColor(0xFEFEFE);
         cell.backgroundColor = [UIColor clearColor];
         cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
         cell.selectedBackgroundView.backgroundColor = _CC_HexColor(0x22A1A2);
         cell.textLabel.highlightedTextColor = _CC_HexColor(0x333333);
     }
+    
+    [cell.textLabel ccMusketWithString:_arrayData[indexPath.row]];
     
     return cell;
 }
