@@ -95,7 +95,8 @@ static BOOL _isFontRegistSuccess = NO;
 #pragma mark - Views
 + (UIScrollView *) ccCreateMainBottomScrollViewWithView {
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,
-                                                                             _CC_ScreenHeight() - _CC_ScreenHeight() * 0.3f,
+//                                                                             _CC_ScreenHeight() - _CC_ScreenHeight() * 0.3f,
+                                                                              0,
                                                                              _CC_ScreenWidth(),
                                                                              _CC_ScreenHeight() * 0.3f)];
     scrollView.showsVerticalScrollIndicator = NO;
@@ -109,6 +110,21 @@ static BOOL _isFontRegistSuccess = NO;
     return scrollView;
 }
 
++ (UITableView *) ccCreateContentTableView {
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,
+                                                                           0,
+                                                                           _CC_ScreenWidth(),
+                                                                           _CC_ScreenHeight())
+                                                          style:UITableViewStylePlain];
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone ;
+    tableView.showsHorizontalScrollIndicator = NO;
+    tableView.showsVerticalScrollIndicator = NO;
+    tableView.alwaysBounceVertical = YES;
+    tableView.backgroundColor = [UIColor clearColor];
+    
+    return tableView;
+}
+
 + (UITableView *) ccCreateMainTableViewWithScrollView : (UIScrollView *) scrollView {
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,
                                                                            0,
@@ -119,6 +135,14 @@ static BOOL _isFontRegistSuccess = NO;
     tableView.separatorColor = _CC_HexColor(0x434D5B);
     tableView.showsHorizontalScrollIndicator = NO;
     tableView.bounces = NO;
+    
+    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [tableView setLayoutMargins:UIEdgeInsetsZero];
+    }
+    
     return tableView;
 }
 

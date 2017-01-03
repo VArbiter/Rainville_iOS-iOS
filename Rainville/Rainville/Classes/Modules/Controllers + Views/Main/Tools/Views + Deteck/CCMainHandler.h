@@ -20,6 +20,8 @@
 #pragma mark - Views
 + (UIScrollView *) ccCreateMainBottomScrollViewWithView;
 
++ (UITableView *) ccCreateContentTableView ;
+
 + (UITableView *) ccCreateMainTableViewWithScrollView : (UIScrollView *) scrollView ;
 
 @end

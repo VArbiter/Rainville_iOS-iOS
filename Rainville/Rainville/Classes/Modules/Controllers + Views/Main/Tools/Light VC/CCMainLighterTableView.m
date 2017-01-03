@@ -48,8 +48,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"_CC_CELL_ID_"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"_CC_CELL_ID_"];
-//        [cell.textLabel ccMusketWithFontSize:12.0f
-//                                  withString:_arrayData[indexPath.row]];
         [cell.textLabel ccMusketWithString:_arrayData[indexPath.row]];
         cell.textLabel.textColor = _CC_HexColor(0xFEFEFE);
         cell.backgroundColor = [UIColor clearColor];
@@ -112,11 +110,14 @@ _CC_DETECT_DEALLOC_
     });
 }
 
-/*
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return _CC_ScreenWidth() / 3.0f / 6.0f;
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
 }
- */
 
 _CC_DETECT_DEALLOC_
 

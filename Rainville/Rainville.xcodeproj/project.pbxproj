@@ -45,6 +45,9 @@
 		37BA5DCF1E1BC30000827DC5 /* CCMainHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DCB1E1BC30000827DC5 /* CCMainHandler.m */; };
 		37BA5DD21E1BC34500827DC5 /* CCMainLighterTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DD11E1BC34500827DC5 /* CCMainLighterTableView.m */; };
 		37BA5DD51E1BD05400827DC5 /* UIColor+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DD41E1BD05400827DC5 /* UIColor+CCExtension.m */; };
+		37BA5DD91E1BE71700827DC5 /* CCMainScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DD81E1BE71700827DC5 /* CCMainScrollCell.m */; };
+		37BA5DDC1E1BEB7900827DC5 /* CCMainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DDB1E1BEB7900827DC5 /* CCMainHeaderView.m */; };
+		37BA5DDE1E1BEB8800827DC5 /* CCMainHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37BA5DDD1E1BEB8800827DC5 /* CCMainHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +113,11 @@
 		37BA5DD11E1BC34500827DC5 /* CCMainLighterTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMainLighterTableView.m; sourceTree = "<group>"; };
 		37BA5DD31E1BD05400827DC5 /* UIColor+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CCExtension.h"; sourceTree = "<group>"; };
 		37BA5DD41E1BD05400827DC5 /* UIColor+CCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CCExtension.m"; sourceTree = "<group>"; };
+		37BA5DD71E1BE71700827DC5 /* CCMainScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMainScrollCell.h; sourceTree = "<group>"; };
+		37BA5DD81E1BE71700827DC5 /* CCMainScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMainScrollCell.m; sourceTree = "<group>"; };
+		37BA5DDA1E1BEB7900827DC5 /* CCMainHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMainHeaderView.h; sourceTree = "<group>"; };
+		37BA5DDB1E1BEB7900827DC5 /* CCMainHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMainHeaderView.m; sourceTree = "<group>"; };
+		37BA5DDD1E1BEB8800827DC5 /* CCMainHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMainHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +196,7 @@
 				372567751DFE84590035E193 /* CCMainViewController.h */,
 				372567761DFE84590035E193 /* CCMainViewController.m */,
 				372567771DFE84590035E193 /* CCMainViewController.xib */,
+				37BA5DD61E1BE6F700827DC5 /* Views */,
 				378160D41E19674D00960928 /* Tools */,
 			);
 			path = Main;
@@ -387,6 +396,18 @@
 			path = "Views + Deteck";
 			sourceTree = "<group>";
 		};
+		37BA5DD61E1BE6F700827DC5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37BA5DD71E1BE71700827DC5 /* CCMainScrollCell.h */,
+				37BA5DD81E1BE71700827DC5 /* CCMainScrollCell.m */,
+				37BA5DDA1E1BEB7900827DC5 /* CCMainHeaderView.h */,
+				37BA5DDB1E1BEB7900827DC5 /* CCMainHeaderView.m */,
+				37BA5DDD1E1BEB8800827DC5 /* CCMainHeaderView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -457,6 +478,7 @@
 				372567881DFE86D80035E193 /* _3.wav in Resources */,
 				3725678C1DFE86D80035E193 /* _7.wav in Resources */,
 				3725678A1DFE86D80035E193 /* _5.wav in Resources */,
+				37BA5DDE1E1BEB8800827DC5 /* CCMainHeaderView.xib in Resources */,
 				3725678D1DFE86D80035E193 /* _8.wav in Resources */,
 				372567891DFE86D80035E193 /* _4.wav in Resources */,
 				375066931DF85D1C00B539D1 /* LaunchScreen.storyboard in Resources */,
@@ -492,6 +514,8 @@
 				37BA5DD21E1BC34500827DC5 /* CCMainLighterTableView.m in Sources */,
 				37BA5DCC1E1BC30000827DC5 /* CCAudioHandler.m in Sources */,
 				3725676C1DFE84110035E193 /* CCCommonDef.m in Sources */,
+				37BA5DD91E1BE71700827DC5 /* CCMainScrollCell.m in Sources */,
+				37BA5DDC1E1BEB7900827DC5 /* CCMainHeaderView.m in Sources */,
 				378160D01E19560B00960928 /* NSURL+CCExtension.m in Sources */,
 				3725676B1DFE84110035E193 /* CCAppDelegate.m in Sources */,
 				378161091E198D6500960928 /* UIFont+CCExtension.m in Sources */,

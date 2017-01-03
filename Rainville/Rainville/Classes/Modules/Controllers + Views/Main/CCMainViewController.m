@@ -10,19 +10,18 @@
 
 #import "CCMainHandler.h"
 #import "CCLocalizedHelper.h"
-#import "CCMainLighterTableView.h"
+
+#import "CCMainScrollCell.h"
+#import "CCMainHeaderView.h"
 
 #import "UILabel+CCExtension.h"
 
-@interface CCMainViewController ()
+@interface CCMainViewController () <UITableViewDataSource , UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *labelPoem;
-@property (weak, nonatomic) IBOutlet UIView *viewContent;
 
-@property (nonatomic , strong) UIScrollView *scrollViewBottom ;
 @property (nonatomic , strong) UITableView *tableView ;
-
-@property (nonatomic , strong) CCMainLighterDataSource *lighterDataSource ;
-@property (nonatomic , strong) CCMainLighterDelegate *lighterDelegate ;
+@property (nonatomic , strong) CCMainScrollCell *cell;
+@property (nonatomic , strong) CCMainHeaderView *headerView ;
 
 - (void) ccDefaultSettings ;
 
@@ -49,30 +48,43 @@
 - (void) ccInitViewSettings {
     [_labelPoem ccMusketWithFontSize:12.0f
                           withString:_CC_RAIN_POEM_()];
+    _tableView = [CCMainHandler ccCreateContentTableView];
+    [self.view addSubview:_tableView];
     
-    _scrollViewBottom = [CCMainHandler ccCreateMainBottomScrollViewWithView];
-    [self.view addSubview:_scrollViewBottom];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
     
-    _tableView = [CCMainHandler ccCreateMainTableViewWithScrollView:_scrollViewBottom];
-    [_scrollViewBottom addSubview:_tableView];
+    _headerView = [[CCMainHeaderView alloc] initFromNib];
+    _tableView.tableHeaderView = _headerView;
     
-    _lighterDataSource = [[CCMainLighterDataSource alloc] initWithReloadblock:nil];
-    __unsafe_unretained CCMainLighterDataSource *tDataSource = _lighterDataSource;
-    _tableView.dataSource = tDataSource;
-    
+    _cell = [[CCMainScrollCell alloc] initWithFrame:CGRectNull];
     ccWeakSelf;
-    _lighterDelegate = [[CCMainLighterDelegate alloc] initWithSelectedBlock:^(NSInteger integerSelectedIndex) {
+    [_cell ccConfigureCellWithHandler:^(NSInteger integerSelectedIndex) {
         [pSelf ccClickedAction:integerSelectedIndex];
     }];
-    __unsafe_unretained CCMainLighterDelegate *tDelegate = _lighterDelegate;
-    _tableView.delegate = tDelegate;
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return _cell;
+}
+#pragma mark - UITableViewDelegate
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return _CC_ScreenHeight() / 3.0f;
+}
+
+#pragma mark - System
+- (void) scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView != _tableView) return;
+    [_headerView ccSetUpDownLabel:(scrollView.contentOffset.y < (_CC_ScreenHeight() * 0.3f - 3))];
 }
 
 - (void) ccClickedAction : (NSInteger) integerIndex {
     CCLog(@"_CC_CLICKED_%ld_",integerIndex);
 }
-
-#pragma mark - Touches
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

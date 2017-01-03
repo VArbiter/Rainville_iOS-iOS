@@ -14,7 +14,6 @@
             <connections>
                 <outlet property="labelPoem" destination="QJz-0I-h1Y" id="lhy-Y5-oWT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="viewContent" destination="6Z2-yt-Ptn" id="fGZ-2M-xbz"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -23,26 +22,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJz-0I-h1Y">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="200"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.2627450980392157" green="0.30196078431372547" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Z2-yt-Ptn">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
             </subviews>
             <color key="backgroundColor" red="0.15294117647058825" green="0.17254901960784313" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="6Z2-yt-Ptn" secondAttribute="bottom" id="AO0-FW-sx8"/>
-                <constraint firstItem="6Z2-yt-Ptn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TEe-02-jnx"/>
                 <constraint firstItem="QJz-0I-h1Y" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="Tk4-op-b1d"/>
                 <constraint firstItem="QJz-0I-h1Y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XpM-0d-wfe"/>
-                <constraint firstItem="QJz-0I-h1Y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="a0o-gt-Oah"/>
-                <constraint firstAttribute="trailing" secondItem="6Z2-yt-Ptn" secondAttribute="trailing" id="kiV-OK-EO8"/>
+                <constraint firstItem="QJz-0I-h1Y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="a0o-gt-Oah"/>
                 <constraint firstAttribute="trailing" secondItem="QJz-0I-h1Y" secondAttribute="trailing" id="m5C-nh-XF5"/>
-                <constraint firstItem="6Z2-yt-Ptn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tNH-Az-GD0"/>
             </constraints>
         </view>
     </objects>
