@@ -8,7 +8,8 @@
 
 #import "CCCommonDef.h"
 
-/// Category
+#import <UIKit/UIKit.h>
+
 #import "UIColor+CCExtension.h"
 #import "NSURL+CCExtension.h"
 #import "UIImage+CCExtension.h"
@@ -29,13 +30,13 @@ float _CC_ScreenWidth() {
     return [UIScreen mainScreen].bounds.size.width;
 }
 
-UIColor * _ccHexColorWithAlpha(int intValue ,float floatAlpha){
+UIColor * _CC_HexColorWithAlpha(int intValue ,float floatAlpha){
     return [UIColor ccHexColor:intValue
                 withFloatAlpha:floatAlpha];
 }
 
-UIColor * _ccHexColor(int intValue){
-    return _ccHexColorWithAlpha(intValue, 1.0f);
+UIColor * _CC_HexColor(int intValue){
+    return _CC_HexColorWithAlpha(intValue, 1.0f);
 }
 
 UIColor * _CC_RGBColorWithAlpha(float floatR, float floatG , float floatB , float floatA) {

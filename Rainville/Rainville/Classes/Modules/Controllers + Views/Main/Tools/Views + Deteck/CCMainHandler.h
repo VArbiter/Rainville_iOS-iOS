@@ -15,7 +15,11 @@
 
 + (BOOL) ccIsHeadPhoneInsertWithHandler : (CCCommonBlock) block ;
 
++ (BOOL) ccIsMuteEnabledWithHandler : (CCCommonBlock) block ;
+
 #pragma mark - Views
 + (UIScrollView *) ccCreateMainBottomScrollViewWithView;
+
++ (UITableView *) ccCreateMainTableViewWithScrollView : (UIScrollView *) scrollView ;
 
 @end

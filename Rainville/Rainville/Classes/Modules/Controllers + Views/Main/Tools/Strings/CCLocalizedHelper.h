@@ -18,6 +18,8 @@ NSString * _CC_RAIN_POEM_() ;
 
 NSString * _CC_PLAY_() ;
 NSString * _CC_STOP_() ;
+NSString * _CC_CONFIRM_() ;
+NSString * _CC_CANCEL_() ;
 NSString * _CC_SET_CLOSE_TIMER_() ;
 NSString * _CC_SET_CLOSE_MINUTES_() ;
 

@@ -12,4 +12,8 @@
 
 + (instancetype) ccMusketFontWithSize : (float) floatSize ;
 
++ (instancetype) ccWeatherIconsWithSize : (float) floatSize ;
+
++ (instancetype) ccElegantIconsWithSize : (float) floatSize ;
+
 @end

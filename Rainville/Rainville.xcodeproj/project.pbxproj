@@ -26,21 +26,25 @@
 		375066851DF85D1C00B539D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 375066841DF85D1C00B539D1 /* main.m */; };
 		375066901DF85D1C00B539D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3750668F1DF85D1C00B539D1 /* Assets.xcassets */; };
 		375066931DF85D1C00B539D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375066911DF85D1C00B539D1 /* LaunchScreen.storyboard */; };
-		378160CD1E19513500960928 /* UIColor+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160CC1E19513500960928 /* UIColor+CCExtension.m */; };
 		378160D01E19560B00960928 /* NSURL+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160CF1E19560B00960928 /* NSURL+CCExtension.m */; };
 		378160D31E19580100960928 /* UIImage+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160D21E19580100960928 /* UIImage+CCExtension.m */; };
-		378160D71E19677500960928 /* CCMainHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160D61E19677500960928 /* CCMainHandler.m */; };
 		378160DC1E19689200960928 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160DB1E19689200960928 /* MBProgressHUD.m */; };
-		378160E01E19691000960928 /* CCHintHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160DF1E19691000960928 /* CCHintHandler.m */; };
 		378160E51E1970E700960928 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 378160E71E1970E700960928 /* Localizable.strings */; };
 		378160EB1E19726000960928 /* ArrayItem_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 378160EA1E19726000960928 /* ArrayItem_EN.plist */; };
 		378160F11E1972FB00960928 /* ArrayItem_CH.plist in Resources */ = {isa = PBXBuildFile; fileRef = 378160F01E1972FB00960928 /* ArrayItem_CH.plist */; };
-		378160F41E1978A300960928 /* CCLocalizedHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160F31E1978A300960928 /* CCLocalizedHelper.m */; };
 		378160F81E197E3900960928 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 378160FA1E197E3900960928 /* InfoPlist.strings */; };
 		378160FF1E19810D00960928 /* UIView+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160FE1E19810D00960928 /* UIView+CCExtension.m */; };
 		378161011E1987E200960928 /* weather.otf in Resources */ = {isa = PBXBuildFile; fileRef = 378161001E1987E200960928 /* weather.otf */; };
 		378161061E1987F600960928 /* Musket regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 378161041E1987F600960928 /* Musket regular.otf */; };
 		378161091E198D6500960928 /* UIFont+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 378161081E198D6500960928 /* UIFont+CCExtension.m */; };
+		37BA5DB81E1BAEA800827DC5 /* UILabel+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DB71E1BAEA800827DC5 /* UILabel+CCExtension.m */; };
+		37BA5DBE1E1BB8F900827DC5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BA5DBD1E1BB8F900827DC5 /* AVFoundation.framework */; };
+		37BA5DCC1E1BC30000827DC5 /* CCAudioHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DC11E1BC30000827DC5 /* CCAudioHandler.m */; };
+		37BA5DCD1E1BC30000827DC5 /* CCHintHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DC41E1BC30000827DC5 /* CCHintHandler.m */; };
+		37BA5DCE1E1BC30000827DC5 /* CCLocalizedHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DC81E1BC30000827DC5 /* CCLocalizedHelper.m */; };
+		37BA5DCF1E1BC30000827DC5 /* CCMainHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DCB1E1BC30000827DC5 /* CCMainHandler.m */; };
+		37BA5DD21E1BC34500827DC5 /* CCMainLighterTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DD11E1BC34500827DC5 /* CCMainLighterTableView.m */; };
+		37BA5DD51E1BD05400827DC5 /* UIColor+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DD41E1BD05400827DC5 /* UIColor+CCExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,25 +74,17 @@
 		3750668F1DF85D1C00B539D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		375066921DF85D1C00B539D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		375066941DF85D1C00B539D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		378160CB1E19513500960928 /* UIColor+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CCExtension.h"; sourceTree = "<group>"; };
-		378160CC1E19513500960928 /* UIColor+CCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CCExtension.m"; sourceTree = "<group>"; };
 		378160CE1E19560B00960928 /* NSURL+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+CCExtension.h"; sourceTree = "<group>"; };
 		378160CF1E19560B00960928 /* NSURL+CCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+CCExtension.m"; sourceTree = "<group>"; };
 		378160D11E19580100960928 /* UIImage+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CCExtension.h"; sourceTree = "<group>"; };
 		378160D21E19580100960928 /* UIImage+CCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CCExtension.m"; sourceTree = "<group>"; };
-		378160D51E19677500960928 /* CCMainHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMainHandler.h; sourceTree = "<group>"; };
-		378160D61E19677500960928 /* CCMainHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMainHandler.m; sourceTree = "<group>"; };
 		378160DA1E19689200960928 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		378160DB1E19689200960928 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		378160DE1E19691000960928 /* CCHintHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHintHandler.h; sourceTree = "<group>"; };
-		378160DF1E19691000960928 /* CCHintHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHintHandler.m; sourceTree = "<group>"; };
 		378160E11E196FD300960928 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		378160E61E1970E700960928 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		378160E81E1970E900960928 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		378160EA1E19726000960928 /* ArrayItem_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ArrayItem_EN.plist; sourceTree = "<group>"; };
 		378160F01E1972FB00960928 /* ArrayItem_CH.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ArrayItem_CH.plist; sourceTree = "<group>"; };
-		378160F21E1978A300960928 /* CCLocalizedHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocalizedHelper.h; sourceTree = "<group>"; };
-		378160F31E1978A300960928 /* CCLocalizedHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocalizedHelper.m; sourceTree = "<group>"; };
 		378160F51E197C9A00960928 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		378160F91E197E3900960928 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		378160FB1E197E3A00960928 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -99,6 +95,21 @@
 		378161041E1987F600960928 /* Musket regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Musket regular.otf"; sourceTree = "<group>"; };
 		378161071E198D6500960928 /* UIFont+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CCExtension.h"; sourceTree = "<group>"; };
 		378161081E198D6500960928 /* UIFont+CCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CCExtension.m"; sourceTree = "<group>"; };
+		37BA5DB61E1BAEA800827DC5 /* UILabel+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CCExtension.h"; sourceTree = "<group>"; };
+		37BA5DB71E1BAEA800827DC5 /* UILabel+CCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CCExtension.m"; sourceTree = "<group>"; };
+		37BA5DBD1E1BB8F900827DC5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		37BA5DC01E1BC30000827DC5 /* CCAudioHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAudioHandler.h; sourceTree = "<group>"; };
+		37BA5DC11E1BC30000827DC5 /* CCAudioHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAudioHandler.m; sourceTree = "<group>"; };
+		37BA5DC31E1BC30000827DC5 /* CCHintHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHintHandler.h; sourceTree = "<group>"; };
+		37BA5DC41E1BC30000827DC5 /* CCHintHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHintHandler.m; sourceTree = "<group>"; };
+		37BA5DC71E1BC30000827DC5 /* CCLocalizedHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocalizedHelper.h; sourceTree = "<group>"; };
+		37BA5DC81E1BC30000827DC5 /* CCLocalizedHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocalizedHelper.m; sourceTree = "<group>"; };
+		37BA5DCA1E1BC30000827DC5 /* CCMainHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMainHandler.h; sourceTree = "<group>"; };
+		37BA5DCB1E1BC30000827DC5 /* CCMainHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMainHandler.m; sourceTree = "<group>"; };
+		37BA5DD01E1BC34500827DC5 /* CCMainLighterTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMainLighterTableView.h; sourceTree = "<group>"; };
+		37BA5DD11E1BC34500827DC5 /* CCMainLighterTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMainLighterTableView.m; sourceTree = "<group>"; };
+		37BA5DD31E1BD05400827DC5 /* UIColor+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CCExtension.h"; sourceTree = "<group>"; };
+		37BA5DD41E1BD05400827DC5 /* UIColor+CCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CCExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37BA5DBE1E1BB8F900827DC5 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +235,7 @@
 			children = (
 				375066821DF85D1C00B539D1 /* Rainville */,
 				375066811DF85D1C00B539D1 /* Products */,
+				37BA5DBC1E1BB8F900827DC5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -257,8 +270,8 @@
 		378160CA1E19511000960928 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				378160CB1E19513500960928 /* UIColor+CCExtension.h */,
-				378160CC1E19513500960928 /* UIColor+CCExtension.m */,
+				37BA5DD31E1BD05400827DC5 /* UIColor+CCExtension.h */,
+				37BA5DD41E1BD05400827DC5 /* UIColor+CCExtension.m */,
 				378160CE1E19560B00960928 /* NSURL+CCExtension.h */,
 				378160CF1E19560B00960928 /* NSURL+CCExtension.m */,
 				378160D11E19580100960928 /* UIImage+CCExtension.h */,
@@ -267,6 +280,8 @@
 				378160FE1E19810D00960928 /* UIView+CCExtension.m */,
 				378161071E198D6500960928 /* UIFont+CCExtension.h */,
 				378161081E198D6500960928 /* UIFont+CCExtension.m */,
+				37BA5DB61E1BAEA800827DC5 /* UILabel+CCExtension.h */,
+				37BA5DB71E1BAEA800827DC5 /* UILabel+CCExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -274,12 +289,11 @@
 		378160D41E19674D00960928 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				378160D51E19677500960928 /* CCMainHandler.h */,
-				378160D61E19677500960928 /* CCMainHandler.m */,
-				378160DE1E19691000960928 /* CCHintHandler.h */,
-				378160DF1E19691000960928 /* CCHintHandler.m */,
-				378160F21E1978A300960928 /* CCLocalizedHelper.h */,
-				378160F31E1978A300960928 /* CCLocalizedHelper.m */,
+				37BA5DBF1E1BC30000827DC5 /* Audio */,
+				37BA5DC21E1BC30000827DC5 /* Hint */,
+				37BA5DC51E1BC30000827DC5 /* Light VC */,
+				37BA5DC61E1BC30000827DC5 /* Strings */,
+				37BA5DC91E1BC30000827DC5 /* Views + Deteck */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -318,6 +332,59 @@
 				378161041E1987F600960928 /* Musket regular.otf */,
 			);
 			path = Musket;
+			sourceTree = "<group>";
+		};
+		37BA5DBC1E1BB8F900827DC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37BA5DBD1E1BB8F900827DC5 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		37BA5DBF1E1BC30000827DC5 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				37BA5DC01E1BC30000827DC5 /* CCAudioHandler.h */,
+				37BA5DC11E1BC30000827DC5 /* CCAudioHandler.m */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		37BA5DC21E1BC30000827DC5 /* Hint */ = {
+			isa = PBXGroup;
+			children = (
+				37BA5DC31E1BC30000827DC5 /* CCHintHandler.h */,
+				37BA5DC41E1BC30000827DC5 /* CCHintHandler.m */,
+			);
+			path = Hint;
+			sourceTree = "<group>";
+		};
+		37BA5DC51E1BC30000827DC5 /* Light VC */ = {
+			isa = PBXGroup;
+			children = (
+				37BA5DD01E1BC34500827DC5 /* CCMainLighterTableView.h */,
+				37BA5DD11E1BC34500827DC5 /* CCMainLighterTableView.m */,
+			);
+			path = "Light VC";
+			sourceTree = "<group>";
+		};
+		37BA5DC61E1BC30000827DC5 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				37BA5DC71E1BC30000827DC5 /* CCLocalizedHelper.h */,
+				37BA5DC81E1BC30000827DC5 /* CCLocalizedHelper.m */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		37BA5DC91E1BC30000827DC5 /* Views + Deteck */ = {
+			isa = PBXGroup;
+			children = (
+				37BA5DCA1E1BC30000827DC5 /* CCMainHandler.h */,
+				37BA5DCB1E1BC30000827DC5 /* CCMainHandler.m */,
+			);
+			path = "Views + Deteck";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,18 +483,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37BA5DCE1E1BC30000827DC5 /* CCLocalizedHelper.m in Sources */,
 				372567741DFE84280035E193 /* CCBaseViewController.m in Sources */,
-				378160CD1E19513500960928 /* UIColor+CCExtension.m in Sources */,
+				37BA5DCF1E1BC30000827DC5 /* CCMainHandler.m in Sources */,
 				372567781DFE84590035E193 /* CCMainViewController.m in Sources */,
-				378160F41E1978A300960928 /* CCLocalizedHelper.m in Sources */,
+				37BA5DD51E1BD05400827DC5 /* UIColor+CCExtension.m in Sources */,
+				37BA5DB81E1BAEA800827DC5 /* UILabel+CCExtension.m in Sources */,
+				37BA5DD21E1BC34500827DC5 /* CCMainLighterTableView.m in Sources */,
+				37BA5DCC1E1BC30000827DC5 /* CCAudioHandler.m in Sources */,
 				3725676C1DFE84110035E193 /* CCCommonDef.m in Sources */,
 				378160D01E19560B00960928 /* NSURL+CCExtension.m in Sources */,
-				378160E01E19691000960928 /* CCHintHandler.m in Sources */,
 				3725676B1DFE84110035E193 /* CCAppDelegate.m in Sources */,
 				378161091E198D6500960928 /* UIFont+CCExtension.m in Sources */,
 				375066851DF85D1C00B539D1 /* main.m in Sources */,
 				378160DC1E19689200960928 /* MBProgressHUD.m in Sources */,
-				378160D71E19677500960928 /* CCMainHandler.m in Sources */,
+				37BA5DCD1E1BC30000827DC5 /* CCHintHandler.m in Sources */,
 				378160FF1E19810D00960928 /* UIView+CCExtension.m in Sources */,
 				378160D31E19580100960928 /* UIImage+CCExtension.m in Sources */,
 			);

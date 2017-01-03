@@ -16,7 +16,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "UIView+CCExtension.h"
+
+#ifndef __OPTMIZE__
 static BOOL _isFontRegistSuccess = NO;
+#endif
 
 @interface CCMainHandler ()
 
@@ -46,13 +50,37 @@ static BOOL _isFontRegistSuccess = NO;
                         || [(__bridge NSString *)state isEqualToString:@"HeadsetInOut"]) ;
 #endif
     _CC_Safe_Async_Block(^{
-        block(isHeadphoneInsert , nil);
+        if (block) {
+            block(isHeadphoneInsert , nil);
+        }
     });
     return isHeadphoneInsert;
 }
 
++ (BOOL) ccIsMuteEnabledWithHandler : (CCCommonBlock) block {
+    BOOL isMuteEnabled = NO;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_7_0
+#warning TODO >>> 检测 7.0 以上静音 .
+#else
+    CFStringRef state;
+    UInt32 propertySize = sizeof(CFStringRef);
+    AudioSessionInitialize(NULL, NULL, NULL, NULL);
+    AudioSessionGetProperty(kAudioSessionProperty_AudioRoute,
+                            &propertySize,
+                            &state);
+    isMuteEnabled = CFStringGetLength(state) == 0 ;
+#endif
+    _CC_Safe_Async_Block(^{
+        if (block) {
+            block(isMuteEnabled , nil);
+        }
+    });
+    return isMuteEnabled;
+}
+
 #pragma mark - System
 
+#ifndef __OPTMIZE__
 + (void)load {
     NSMutableArray *array = [NSMutableArray array];
     for (NSString *stringFamilyName in [UIFont familyNames]) {
@@ -62,12 +90,13 @@ static BOOL _isFontRegistSuccess = NO;
     }
     _isFontRegistSuccess = array.count == 3;
 }
+#endif
 
 #pragma mark - Views
 + (UIScrollView *) ccCreateMainBottomScrollViewWithView {
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,
                                                                              _CC_ScreenHeight() - _CC_ScreenHeight() * 0.3f,
-                                                                             _CC_ScreenWidth() * 2,
+                                                                             _CC_ScreenWidth(),
                                                                              _CC_ScreenHeight() * 0.3f)];
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -75,8 +104,22 @@ static BOOL _isFontRegistSuccess = NO;
     scrollView.bouncesZoom = NO;
     scrollView.pagingEnabled = YES;
     scrollView.backgroundColor = [UIColor clearColor] ;
+    scrollView.contentSize = CGSizeMake(_CC_ScreenWidth() * 2, scrollView.height);
     
     return scrollView;
+}
+
++ (UITableView *) ccCreateMainTableViewWithScrollView : (UIScrollView *) scrollView {
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,
+                                                                           0,
+                                                                           _CC_ScreenWidth(),
+                                                                           scrollView.height)
+                                                          style:UITableViewStylePlain];
+    tableView.backgroundColor = [UIColor clearColor];
+    tableView.separatorColor = _CC_HexColor(0x434D5B);
+    tableView.showsHorizontalScrollIndicator = NO;
+    tableView.bounces = NO;
+    return tableView;
 }
 
 @end

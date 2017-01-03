@@ -15,4 +15,14 @@
                          size:floatSize];
 }
 
++ (instancetype) ccWeatherIconsWithSize : (float) floatSize {
+    return [self fontWithName:@"Weather Icons"
+                         size:floatSize];
+}
+
++ (instancetype) ccElegantIconsWithSize : (float) floatSize {
+    return [self fontWithName:@"ElegantIcons"
+                         size:floatSize];
+}
+
 @end

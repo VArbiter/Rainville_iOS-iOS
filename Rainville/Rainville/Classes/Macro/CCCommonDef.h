@@ -19,21 +19,10 @@
 
 #define ccStringFormat(...) [NSString stringWithFormat:__VA_ARGS__]
 
-#define cc_Sync_SAFE_Block(block)\
-    if (!block) return ;\
-    if ([NSThread isMainThread]) {\
-        block();\
-    } else {\
-        dispatch_sync(dispatch_get_main_queue(), block);\
-    }
-
-#define cc_Async_SAFE_Block(block)\
-    if (!block) return ;\
-    if ([NSThread isMainThread]) {\
-        block();\
-    } else {\
-        dispatch_async(dispatch_get_main_queue(), block);\
-    }
+#define _CC_DETECT_DEALLOC_ \
+    - (void)dealloc { \
+        CCLog(@"_CC_%@_DEALLOC_" , NSStringFromClass([self class]));\
+    }\
 
 typedef void(^CCCommonBlock)(BOOL isSucceed , id item);
 

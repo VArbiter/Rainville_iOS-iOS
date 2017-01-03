@@ -15,6 +15,8 @@
 
 "_CC_PLAY_" = "播放" ;
 "_CC_STOP_" = "停止" ;
+"_CC_CONFIRM_" = "确认" ;
+"_CC_CANCEL_" = "取消" ;
 "_CC_SET_CLOSE_TIMER_" = "设定在" ;
 "_CC_SET_CLOSE_MINUTES_" = "分钟以后，停止播放" ;
 
