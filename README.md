@@ -1,6 +1,8 @@
 # Rainville_iOS-iOS
 Rainville For iOS /  聆雨 iOS 版本
 
+## 目前尚未开发完成 . 
+
 #### 聆雨原创_GITHUB : [feelinglucky](https://github.com/feelinglucky/Rainville/)
 
 ##### 为什么要写 聆雨_iOS 版本
