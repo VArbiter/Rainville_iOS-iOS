@@ -29,6 +29,8 @@
 		374A91061E1C4B560025CFA5 /* Rainville_Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 374A90F91E1C4B560025CFA5 /* Rainville_Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		375066851DF85D1C00B539D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 375066841DF85D1C00B539D1 /* main.m */; };
 		375066901DF85D1C00B539D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3750668F1DF85D1C00B539D1 /* Assets.xcassets */; };
+		376596A61E1EDC2E001CE366 /* Launch Screen_ZH.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 376596A41E1EDC2E001CE366 /* Launch Screen_ZH.storyboard */; };
+		376596A71E1EDC2E001CE366 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 376596A51E1EDC2E001CE366 /* Launch Screen.storyboard */; };
 		378160D01E19560B00960928 /* NSURL+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160CF1E19560B00960928 /* NSURL+CCExtension.m */; };
 		378160D31E19580100960928 /* UIImage+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160D21E19580100960928 /* UIImage+CCExtension.m */; };
 		378160DC1E19689200960928 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160DB1E19689200960928 /* MBProgressHUD.m */; };
@@ -114,6 +116,8 @@
 		375066841DF85D1C00B539D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3750668F1DF85D1C00B539D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		375066941DF85D1C00B539D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		376596A41E1EDC2E001CE366 /* Launch Screen_ZH.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen_ZH.storyboard"; sourceTree = "<group>"; };
+		376596A51E1EDC2E001CE366 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		378160CE1E19560B00960928 /* NSURL+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+CCExtension.h"; sourceTree = "<group>"; };
 		378160CF1E19560B00960928 /* NSURL+CCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+CCExtension.m"; sourceTree = "<group>"; };
 		378160D11E19580100960928 /* UIImage+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CCExtension.h"; sourceTree = "<group>"; };
@@ -477,6 +481,8 @@
 		37BA5DDF1E1BFFC900827DC5 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				376596A41E1EDC2E001CE366 /* Launch Screen_ZH.storyboard */,
+				376596A51E1EDC2E001CE366 /* Launch Screen.storyboard */,
 				37BA5DE51E1C012700827DC5 /* CCLaunchViewController.h */,
 				37BA5DE61E1C012700827DC5 /* CCLaunchViewController.m */,
 				37BA5DE71E1C012700827DC5 /* CCLaunchViewController.xib */,
@@ -599,6 +605,7 @@
 				3725678D1DFE86D80035E193 /* _8.wav in Resources */,
 				372567891DFE86D80035E193 /* _4.wav in Resources */,
 				378160F11E1972FB00960928 /* ArrayItem_CH.plist in Resources */,
+				376596A61E1EDC2E001CE366 /* Launch Screen_ZH.storyboard in Resources */,
 				378160F81E197E3900960928 /* InfoPlist.strings in Resources */,
 				372567861DFE86D80035E193 /* _1.wav in Resources */,
 				372567851DFE86D80035E193 /* _0.wav in Resources */,
@@ -611,6 +618,7 @@
 				372567871DFE86D80035E193 /* _2.wav in Resources */,
 				378160EB1E19726000960928 /* ArrayItem_EN.plist in Resources */,
 				372567791DFE84590035E193 /* CCMainViewController.xib in Resources */,
+				376596A71E1EDC2E001CE366 /* Launch Screen.storyboard in Resources */,
 				3725676F1DFE84110035E193 /* elegant.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -859,6 +867,7 @@
 				374A91081E1C4B560025CFA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3750667B1DF85D1C00B539D1 /* Build configuration list for PBXProject "Rainville" */ = {
 			isa = XCConfigurationList;

@@ -7,3 +7,4 @@
 */
 
 CFBundleDisplayName = "聆雨";
+UILaunchStoryboardName = "Launch Screen_ZH";

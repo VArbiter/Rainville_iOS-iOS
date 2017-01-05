@@ -85,7 +85,7 @@
 #pragma mark - System
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView != _tableView) return;
-    [_headerView ccSetUpDownLabel:(scrollView.contentOffset.y < (_CC_ScreenHeight() * 0.3f - 3))];
+    [_headerView ccSetUpDownLabel:(scrollView.contentOffset.y < (_CC_ScreenHeight() * 0.3f - 3.0f))];
 }
 
 - (void) ccClickedAction : (NSInteger) integerIndex {

@@ -7,3 +7,4 @@
 */
 
 CFBundleDisplayName = "Rainville";
+UILaunchStoryboardName = "Launch Screen";
