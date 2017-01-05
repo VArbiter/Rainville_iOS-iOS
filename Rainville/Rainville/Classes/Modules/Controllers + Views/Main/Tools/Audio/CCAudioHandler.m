@@ -23,8 +23,6 @@ static CCAudioHandler *_handler = nil;
 - (void) ccSetAudioPlayer ;
 - (id) ccAudioPlayerSetWithPath : (NSURL *) urlPath ;
 
-//char * ccStringCat(char * char1 , char * char2) ;
-
 @end
 
 @implementation CCAudioHandler
@@ -39,11 +37,6 @@ static CCAudioHandler *_handler = nil;
 
 - (void) ccSetAudioPlayerWithVolumeArray : (NSArray *) arrayVolume
                      withCompleteHandler : (dispatch_block_t) block {
-    dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_PRIORITY_DEFAULT);
-    dispatch_async(queue, ^{
-        [self ccPausePlayingWithCompleteHandler:nil
-                                     withOption:CCPlayOptionStop];
-    });
     dispatch_group_t tGroup = dispatch_group_create() ;
     ccWeakSelf;
     for (short i = 0; i < 10; i++) {
@@ -54,8 +47,10 @@ static CCAudioHandler *_handler = nil;
             if ([player isKindOfClass:[AVAudioPlayer class]]) {
                 AVAudioPlayer *audioPlayer = (AVAudioPlayer *) player ;
                 audioPlayer.volume = [arrayVolume[i] floatValue];
-                [pSelf ccPausePlayingWithCompleteHandler:nil
-                                              withOption:CCPlayOptionPlay];
+                if (![audioPlayer isPlaying]) {                    
+                    [pSelf ccPausePlayingWithCompleteHandler:nil
+                                                  withOption:CCPlayOptionPlay];
+                }
             }
         });
     }
@@ -134,15 +129,7 @@ static CCAudioHandler *_handler = nil;
     [player prepareToPlay];
     return player;
 }
-/*
-char * ccStringCat(char * char1 , char * char2) {
-    char *charResult = malloc(strlen(char1) + strlen(char2) + 1);
-    if (charResult == NULL) return "";
-    strcpy(charResult, char1);
-    strcat(charResult, char2);
-    return charResult;
-}
-*/
+
 #pragma mark - System
 
 - (instancetype)init {
