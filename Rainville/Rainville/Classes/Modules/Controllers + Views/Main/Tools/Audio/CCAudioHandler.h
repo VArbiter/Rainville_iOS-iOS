@@ -10,10 +10,22 @@
 
 @class AVAudioSession;
 
+typedef NS_ENUM(NSInteger , CCPlayOption) {
+    CCPlayOptionStop = 0 ,
+    CCPlayOptionPlay ,
+    CCPlayOptionPause
+};
+
 @interface CCAudioHandler : NSObject
 
 @property (nonatomic , strong) AVAudioSession *audioSession ;
 
 + (instancetype) sharedAudioHandler ;
+
+- (void) ccSetAudioPlayerWithVolumeArray : (NSArray *) arrayVolume
+                     withCompleteHandler : (dispatch_block_t) block ;
+
+- (void) ccPausePlayingWithCompleteHandler : (dispatch_block_t) block
+                                withOption : (CCPlayOption) option ;
 
 @end

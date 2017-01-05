@@ -10,6 +10,8 @@
 
 #import "CCMainHandler.h"
 #import "CCLocalizedHelper.h"
+#import "CCAudioHandler.h"
+#import "CCAudioPreset.h"
 
 #import "CCMainScrollCell.h"
 #import "CCMainHeaderView.h"
@@ -22,12 +24,15 @@
 @property (nonatomic , strong) UITableView *tableView ;
 @property (nonatomic , strong) CCMainScrollCell *cell;
 @property (nonatomic , strong) CCMainHeaderView *headerView ;
+@property (nonatomic , strong) CCAudioHandler *handler ;
+@property (nonatomic , strong) NSDictionary *dictionaryTheme;
 
 - (void) ccDefaultSettings ;
 
 - (void) ccInitViewSettings ;
 
-- (void) ccClickedAction : (NSInteger) integerIndex ;
+- (void) ccClickedAction : (NSInteger) integerIndex
+                 withKey : (NSString *) stringKey;
 
 @end
 
@@ -42,7 +47,9 @@
 
 - (void) ccDefaultSettings {
     self.stringControllerName = NSStringFromClass([self class]) ;
-    self.view.userInteractionEnabled = YES;
+    
+    _dictionaryTheme = [CCAudioPreset ccDefaultAudioSet];
+    _handler = [CCAudioHandler sharedAudioHandler];
 }
 
 - (void) ccInitViewSettings {
@@ -60,8 +67,9 @@
     
     _cell = [[CCMainScrollCell alloc] initWithFrame:CGRectNull];
     ccWeakSelf;
-    [_cell ccConfigureCellWithHandler:^(NSInteger integerSelectedIndex) {
-        [pSelf ccClickedAction:integerSelectedIndex];
+    [_cell ccConfigureCellWithHandler:^(NSString *stringKey, NSInteger integerSelectedIndex) {
+        [pSelf ccClickedAction:integerSelectedIndex
+                       withKey:stringKey];
     }];
 }
 
@@ -80,6 +88,9 @@
 #pragma mark - CCPlayActionDelegate 
 - (void) ccHeaderButtonActionWithPlayOrPause:(BOOL)isPlay {
     CCLog(@"_CC_PLAY_BUTTON_SELECTED_%@_",isPlay ? @"YES" : @"NO");
+    [_handler ccPausePlayingWithCompleteHandler:^{
+        CCLog(@"_CC_PAUSE/PLAY_SUCCEED_");
+    } withOption:(isPlay ? CCPlayOptionPause : CCPlayOptionPlay)];
 }
 
 #pragma mark - System
@@ -88,8 +99,12 @@
     [_headerView ccSetUpDownLabel:(scrollView.contentOffset.y < (_CC_ScreenHeight() * 0.3f - 3.0f))];
 }
 
-- (void) ccClickedAction : (NSInteger) integerIndex {
-    CCLog(@"_CC_CLICKED_%ld_",integerIndex);
+- (void) ccClickedAction : (NSInteger) integerIndex
+                 withKey : (NSString *) stringKey {
+    CCLog(@"_CC_CLICKED_%ld_KEY_%@_",integerIndex,stringKey);
+    [_handler ccSetAudioPlayerWithVolumeArray:_dictionaryTheme[stringKey] withCompleteHandler:^{
+        CCLog(@"_CC_PLAY_SUCCEED_");
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

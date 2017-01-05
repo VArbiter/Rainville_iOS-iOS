@@ -10,6 +10,6 @@
 
 @interface CCMainScrollCell : UITableViewCell
 
-- (void) ccConfigureCellWithHandler : (void(^)(NSInteger integerSelectedIndex)) block;
+- (void) ccConfigureCellWithHandler : (void(^)(NSString * stringKey , NSInteger integerSelectedIndex)) block;
 
 @end
