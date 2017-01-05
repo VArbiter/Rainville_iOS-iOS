@@ -20,7 +20,30 @@
                                                                         bundle:[NSBundle mainBundle]];
     [_window makeKeyAndVisible];
     
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
     return YES;
+}
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+    if (event.type != UIEventTypeRemoteControl) return;
+    NSInteger integerOrder = -1;
+    switch (event.subtype) {
+        case UIEventSubtypeRemoteControlPause: integerOrder = UIEventSubtypeRemoteControlPause ; break;
+        case UIEventSubtypeRemoteControlPlay: integerOrder = UIEventSubtypeRemoteControlPlay ; break;
+        case UIEventSubtypeRemoteControlNextTrack: integerOrder = UIEventSubtypeRemoteControlNextTrack ; break;
+        case UIEventSubtypeRemoteControlPreviousTrack: integerOrder = UIEventSubtypeRemoteControlPreviousTrack ; break;
+        case UIEventSubtypeRemoteControlTogglePlayPause: integerOrder = UIEventSubtypeRemoteControlTogglePlayPause ; break;
+            
+        default: integerOrder = -1 ; break;
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:_CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_
+                                                        object:nil
+                                                      userInfo:@{@"key" : @(integerOrder)}];
+}
+
+- (void) applicationWillResignActive:(UIApplication *)application {
+    
 }
 
 @end

@@ -30,6 +30,8 @@ typedef void(^CCCommonBlock)(BOOL isSucceed , id item);
 
 @interface CCCommonDef : NSObject
 
+extern NSString * const _CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_;
+
 float _CC_ScreenHeight();
 
 float _CC_ScreenWidth();

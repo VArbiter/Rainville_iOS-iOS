@@ -14,6 +14,8 @@
 #import "NSURL+CCExtension.h"
 #import "UIImage+CCExtension.h"
 
+NSString * const _CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_ = @"CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION";
+
 @interface CCCommonDef ()
 
 void _CC_SAFE_BLOCK(dispatch_block_t block , BOOL isSync);

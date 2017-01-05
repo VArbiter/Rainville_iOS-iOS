@@ -9,8 +9,10 @@
 #import "CCAudioHandler.h"
 
 #import <AVFoundation/AVFoundation.h>
-
+#import <MediaPlayer/MediaPlayer.h>
 #import "CCAudioPreset.h"
+
+#import "CCLocalizedHelper.h"
 
 static CCAudioHandler *_handler = nil;
 
@@ -47,7 +49,7 @@ static CCAudioHandler *_handler = nil;
             if ([player isKindOfClass:[AVAudioPlayer class]]) {
                 AVAudioPlayer *audioPlayer = (AVAudioPlayer *) player ;
                 audioPlayer.volume = [arrayVolume[i] floatValue];
-                if (![audioPlayer isPlaying]) {                    
+                if (![audioPlayer isPlaying]) {
                     [pSelf ccPausePlayingWithCompleteHandler:nil
                                                   withOption:CCPlayOptionPlay];
                 }
@@ -92,6 +94,16 @@ static CCAudioHandler *_handler = nil;
             block();
         });
     }
+}
+
+- (void) ccSetInstantPlayingInfo : (NSString *) stringKey {
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    [dictionary setValue:stringKey forKey:MPMediaItemPropertyTitle];
+    [dictionary setValue:_CC_APP_NAME_() forKey:MPMediaItemPropertyArtist];
+    
+    MPMediaItemArtwork *artImage = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:@"ic_Launcher"]];
+    [dictionary setValue:artImage forKey:MPMediaItemPropertyArtwork];
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:dictionary];
 }
 
 #pragma mark - Private

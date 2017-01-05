@@ -28,4 +28,6 @@ typedef NS_ENUM(NSInteger , CCPlayOption) {
 - (void) ccPausePlayingWithCompleteHandler : (dispatch_block_t) block
                                 withOption : (CCPlayOption) option ;
 
+- (void) ccSetInstantPlayingInfo : (NSString *) stringKey ;
+
 @end

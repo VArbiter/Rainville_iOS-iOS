@@ -32,6 +32,7 @@
 		376596A61E1EDC2E001CE366 /* Launch Screen_ZH.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 376596A41E1EDC2E001CE366 /* Launch Screen_ZH.storyboard */; };
 		376596A71E1EDC2E001CE366 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 376596A51E1EDC2E001CE366 /* Launch Screen.storyboard */; };
 		376596AA1E1EE1BF001CE366 /* CCAudioPreset.m in Sources */ = {isa = PBXBuildFile; fileRef = 376596A91E1EE1BF001CE366 /* CCAudioPreset.m */; };
+		376596AC1E1F05F4001CE366 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 376596AB1E1F05F4001CE366 /* MediaPlayer.framework */; };
 		378160D01E19560B00960928 /* NSURL+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160CF1E19560B00960928 /* NSURL+CCExtension.m */; };
 		378160D31E19580100960928 /* UIImage+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160D21E19580100960928 /* UIImage+CCExtension.m */; };
 		378160DC1E19689200960928 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160DB1E19689200960928 /* MBProgressHUD.m */; };
@@ -121,6 +122,7 @@
 		376596A51E1EDC2E001CE366 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		376596A81E1EE1BF001CE366 /* CCAudioPreset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAudioPreset.h; sourceTree = "<group>"; };
 		376596A91E1EE1BF001CE366 /* CCAudioPreset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAudioPreset.m; sourceTree = "<group>"; };
+		376596AB1E1F05F4001CE366 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		378160CE1E19560B00960928 /* NSURL+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+CCExtension.h"; sourceTree = "<group>"; };
 		378160CF1E19560B00960928 /* NSURL+CCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+CCExtension.m"; sourceTree = "<group>"; };
 		378160D11E19580100960928 /* UIImage+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CCExtension.h"; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376596AC1E1F05F4001CE366 /* MediaPlayer.framework in Frameworks */,
 				37BA5DEB1E1C039800827DC5 /* MessageUI.framework in Frameworks */,
 				37BA5DBE1E1BB8F900827DC5 /* AVFoundation.framework in Frameworks */,
 			);
@@ -417,6 +420,7 @@
 		37BA5DBC1E1BB8F900827DC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				376596AB1E1F05F4001CE366 /* MediaPlayer.framework */,
 				37BA5DEA1E1C039800827DC5 /* MessageUI.framework */,
 				37BA5DBD1E1BB8F900827DC5 /* AVFoundation.framework */,
 				374A90FA1E1C4B560025CFA5 /* NotificationCenter.framework */,

@@ -34,6 +34,7 @@
 - (void) ccClickedAction : (NSInteger) integerIndex
                  withKey : (NSString *) stringKey;
 
+- (void) ccNotificationRemoteControl : (NSNotification *) sender ;
 @end
 
 @implementation CCMainViewController
@@ -50,6 +51,11 @@
     
     _dictionaryTheme = [CCAudioPreset ccDefaultAudioSet];
     _handler = [CCAudioHandler sharedAudioHandler];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(ccNotificationRemoteControl:)
+                                                 name:_CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_
+                                               object:nil];
 }
 
 - (void) ccInitViewSettings {
@@ -93,6 +99,37 @@
     } withOption:(isPlay ? CCPlayOptionPause : CCPlayOptionPlay)];
 }
 
+#pragma mark - Notification
+- (void) ccNotificationRemoteControl : (NSNotification *) sender {
+    NSInteger integerOrder = [sender.userInfo[@"key"] integerValue];
+    if (integerOrder < 0) return;
+    switch (integerOrder) {
+        case UIEventSubtypeRemoteControlPause:{
+            [_handler ccPausePlayingWithCompleteHandler:^{
+                CCLog(@"_CC_PAUSE_SUCCEED_");
+            } withOption:CCPlayOptionPause];
+        }break;
+        case UIEventSubtypeRemoteControlPlay:{
+            [_handler ccPausePlayingWithCompleteHandler:^{
+                CCLog(@"_CC_PLAY_SUCCEED_");
+            } withOption:CCPlayOptionPlay];
+        }break;
+        case UIEventSubtypeRemoteControlNextTrack:{
+            
+        }break;
+        case UIEventSubtypeRemoteControlPreviousTrack:{
+            
+        }break;
+        case UIEventSubtypeRemoteControlTogglePlayPause:{
+            
+        }break;
+            
+        default:
+            return ;
+            break;
+    }
+}
+
 #pragma mark - System
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView != _tableView) return;
@@ -102,8 +139,10 @@
 - (void) ccClickedAction : (NSInteger) integerIndex
                  withKey : (NSString *) stringKey {
     CCLog(@"_CC_CLICKED_%ld_KEY_%@_",integerIndex,stringKey);
+    ccWeakSelf;
     [_handler ccSetAudioPlayerWithVolumeArray:_dictionaryTheme[stringKey] withCompleteHandler:^{
         CCLog(@"_CC_PLAY_SUCCEED_");
+        [pSelf.handler ccSetInstantPlayingInfo:stringKey];
     }];
 }
 
