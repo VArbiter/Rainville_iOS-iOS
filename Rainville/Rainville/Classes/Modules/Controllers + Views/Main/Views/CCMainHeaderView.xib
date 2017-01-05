@@ -25,17 +25,64 @@
                     <color key="textColor" red="0.89411764705882346" green="0.89411764705882346" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-V8-1aT">
+                    <rect key="frame" x="145" y="313" width="85" height="42"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9R5-Gr-snf">
+                    <rect key="frame" x="154.5" y="395" width="65" height="30"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="65" id="Dda-EZ-7dx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="ccButtonPlayPauseActon:" destination="iN0-l3-epB" eventType="touchUpInside" id="c6p-EB-2sW"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syT-IN-fVb">
+                    <rect key="frame" x="163" y="249" width="49" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcl-Nr-75r">
+                    <rect key="frame" x="143" y="202" width="90.5" height="42"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.15294117647058825" green="0.17254901960784313" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="syT-IN-fVb" firstAttribute="top" secondItem="mcl-Nr-75r" secondAttribute="bottom" constant="5" id="1wU-kz-t0m"/>
+                <constraint firstItem="9R5-Gr-snf" firstAttribute="top" secondItem="IJM-V8-1aT" secondAttribute="bottom" constant="40" id="45A-DT-TSh"/>
                 <constraint firstAttribute="bottom" secondItem="0QP-BT-ssL" secondAttribute="bottom" id="75A-WP-ANl"/>
                 <constraint firstAttribute="bottom" secondItem="Z2f-qV-7Oi" secondAttribute="bottom" id="Krt-qQ-cgg"/>
+                <constraint firstItem="IJM-V8-1aT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Mzs-ZK-Inn"/>
+                <constraint firstItem="IJM-V8-1aT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="aGa-nZ-xKt"/>
                 <constraint firstItem="0QP-BT-ssL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dLT-jL-vsj"/>
                 <constraint firstItem="Z2f-qV-7Oi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hgH-Gw-NdT"/>
+                <constraint firstItem="IJM-V8-1aT" firstAttribute="top" secondItem="syT-IN-fVb" secondAttribute="bottom" constant="40" id="lbf-pD-MH7"/>
+                <constraint firstItem="9R5-Gr-snf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mHa-3x-SWL"/>
+                <constraint firstItem="mcl-Nr-75r" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qXv-yo-9uN"/>
+                <constraint firstItem="syT-IN-fVb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="up8-LV-Tk0"/>
                 <constraint firstItem="0QP-BT-ssL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vrv-wi-0Vn"/>
                 <constraint firstAttribute="trailing" secondItem="0QP-BT-ssL" secondAttribute="trailing" id="zT0-bl-yCZ"/>
             </constraints>
             <connections>
+                <outlet property="buttonPlayPause" destination="9R5-Gr-snf" id="R3f-bX-22M"/>
+                <outlet property="labelAppName" destination="mcl-Nr-75r" id="H6q-eP-o3I"/>
+                <outlet property="labelDesc" destination="syT-IN-fVb" id="I6K-qh-SJh"/>
+                <outlet property="labelIcon" destination="IJM-V8-1aT" id="3k9-y0-470"/>
                 <outlet property="labelUpDown" destination="Z2f-qV-7Oi" id="hR4-6g-Gwg"/>
                 <outlet property="viewBackGround" destination="0QP-BT-ssL" id="yux-cr-z8H"/>
             </connections>

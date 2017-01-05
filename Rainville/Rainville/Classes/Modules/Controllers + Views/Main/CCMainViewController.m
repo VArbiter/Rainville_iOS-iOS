@@ -16,7 +16,7 @@
 
 #import "UILabel+CCExtension.h"
 
-@interface CCMainViewController () <UITableViewDataSource , UITableViewDelegate>
+@interface CCMainViewController () <UITableViewDataSource , UITableViewDelegate , CCPlayActionDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *labelPoem;
 
 @property (nonatomic , strong) UITableView *tableView ;
@@ -55,6 +55,7 @@
     _tableView.delegate = self;
     
     _headerView = [[CCMainHeaderView alloc] initFromNib];
+    _headerView.delegate = self;
     _tableView.tableHeaderView = _headerView;
     
     _cell = [[CCMainScrollCell alloc] initWithFrame:CGRectNull];
@@ -74,6 +75,11 @@
 #pragma mark - UITableViewDelegate
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return _CC_ScreenHeight() * 0.3f;
+}
+
+#pragma mark - CCPlayActionDelegate 
+- (void) ccHeaderButtonActionWithPlayOrPause:(BOOL)isPlay {
+    CCLog(@"_CC_PLAY_BUTTON_SELECTED_%@_",isPlay ? @"YES" : @"NO");
 }
 
 #pragma mark - System

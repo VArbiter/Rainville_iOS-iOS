@@ -23,6 +23,10 @@
 		3725678C1DFE86D80035E193 /* _7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 372567821DFE86D80035E193 /* _7.wav */; };
 		3725678D1DFE86D80035E193 /* _8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 372567831DFE86D80035E193 /* _8.wav */; };
 		3725678E1DFE86D80035E193 /* _9.wav in Resources */ = {isa = PBXBuildFile; fileRef = 372567841DFE86D80035E193 /* _9.wav */; };
+		374A90FB1E1C4B560025CFA5 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374A90FA1E1C4B560025CFA5 /* NotificationCenter.framework */; };
+		374A90FF1E1C4B560025CFA5 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374A90FE1E1C4B560025CFA5 /* TodayViewController.m */; };
+		374A91021E1C4B560025CFA5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 374A91001E1C4B560025CFA5 /* MainInterface.storyboard */; };
+		374A91061E1C4B560025CFA5 /* Rainville_Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 374A90F91E1C4B560025CFA5 /* Rainville_Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		375066851DF85D1C00B539D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 375066841DF85D1C00B539D1 /* main.m */; };
 		375066901DF85D1C00B539D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3750668F1DF85D1C00B539D1 /* Assets.xcassets */; };
 		378160D01E19560B00960928 /* NSURL+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 378160CF1E19560B00960928 /* NSURL+CCExtension.m */; };
@@ -52,6 +56,30 @@
 		37BA5DEB1E1C039800827DC5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BA5DEA1E1C039800827DC5 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		374A91041E1C4B560025CFA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 375066781DF85D1C00B539D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 374A90F81E1C4B560025CFA5;
+			remoteInfo = Rainville_Widget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		374A910A1E1C4B560025CFA5 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				374A91061E1C4B560025CFA5 /* Rainville_Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		372567581DFE84110035E193 /* CCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppDelegate.h; sourceTree = "<group>"; };
 		372567591DFE84110035E193 /* CCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppDelegate.m; sourceTree = "<group>"; };
@@ -74,6 +102,14 @@
 		372567821DFE86D80035E193 /* _7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = _7.wav; sourceTree = "<group>"; };
 		372567831DFE86D80035E193 /* _8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = _8.wav; sourceTree = "<group>"; };
 		372567841DFE86D80035E193 /* _9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = _9.wav; sourceTree = "<group>"; };
+		374A90F91E1C4B560025CFA5 /* Rainville_Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Rainville_Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		374A90FA1E1C4B560025CFA5 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		374A90FD1E1C4B560025CFA5 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		374A90FE1E1C4B560025CFA5 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		374A91011E1C4B560025CFA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		374A91031E1C4B560025CFA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		374A910C1E1C4B820025CFA5 /* Rainville.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rainville.entitlements; sourceTree = "<group>"; };
+		374A910D1E1C4C350025CFA5 /* Rainville_Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rainville_Widget.entitlements; sourceTree = "<group>"; };
 		375066801DF85D1C00B539D1 /* Rainville.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rainville.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		375066841DF85D1C00B539D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3750668F1DF85D1C00B539D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +161,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		374A90F61E1C4B560025CFA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				374A90FB1E1C4B560025CFA5 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3750667D1DF85D1C00B539D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,10 +289,23 @@
 			path = RAW;
 			sourceTree = "<group>";
 		};
+		374A90FC1E1C4B560025CFA5 /* Rainville_Widget */ = {
+			isa = PBXGroup;
+			children = (
+				374A910D1E1C4C350025CFA5 /* Rainville_Widget.entitlements */,
+				374A90FD1E1C4B560025CFA5 /* TodayViewController.h */,
+				374A90FE1E1C4B560025CFA5 /* TodayViewController.m */,
+				374A91001E1C4B560025CFA5 /* MainInterface.storyboard */,
+				374A91031E1C4B560025CFA5 /* Info.plist */,
+			);
+			path = Rainville_Widget;
+			sourceTree = "<group>";
+		};
 		375066771DF85D1C00B539D1 = {
 			isa = PBXGroup;
 			children = (
 				375066821DF85D1C00B539D1 /* Rainville */,
+				374A90FC1E1C4B560025CFA5 /* Rainville_Widget */,
 				375066811DF85D1C00B539D1 /* Products */,
 				37BA5DBC1E1BB8F900827DC5 /* Frameworks */,
 			);
@@ -258,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				375066801DF85D1C00B539D1 /* Rainville.app */,
+				374A90F91E1C4B560025CFA5 /* Rainville_Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -265,6 +323,7 @@
 		375066821DF85D1C00B539D1 /* Rainville */ = {
 			isa = PBXGroup;
 			children = (
+				374A910C1E1C4B820025CFA5 /* Rainville.entitlements */,
 				372567561DFE84110035E193 /* Classes */,
 				3750668F1DF85D1C00B539D1 /* Assets.xcassets */,
 				375066941DF85D1C00B539D1 /* Info.plist */,
@@ -353,6 +412,7 @@
 			children = (
 				37BA5DEA1E1C039800827DC5 /* MessageUI.framework */,
 				37BA5DBD1E1BB8F900827DC5 /* AVFoundation.framework */,
+				374A90FA1E1C4B560025CFA5 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -427,6 +487,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		374A90F81E1C4B560025CFA5 /* Rainville_Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 374A91091E1C4B560025CFA5 /* Build configuration list for PBXNativeTarget "Rainville_Widget" */;
+			buildPhases = (
+				374A90F51E1C4B560025CFA5 /* Sources */,
+				374A90F61E1C4B560025CFA5 /* Frameworks */,
+				374A90F71E1C4B560025CFA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Rainville_Widget;
+			productName = Rainville_Widget;
+			productReference = 374A90F91E1C4B560025CFA5 /* Rainville_Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		3750667F1DF85D1C00B539D1 /* Rainville */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 375066971DF85D1C00B539D1 /* Build configuration list for PBXNativeTarget "Rainville" */;
@@ -434,10 +511,12 @@
 				3750667C1DF85D1C00B539D1 /* Sources */,
 				3750667D1DF85D1C00B539D1 /* Frameworks */,
 				3750667E1DF85D1C00B539D1 /* Resources */,
+				374A910A1E1C4B560025CFA5 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				374A91051E1C4B560025CFA5 /* PBXTargetDependency */,
 			);
 			name = Rainville;
 			productName = Rainville;
@@ -454,11 +533,24 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "冯明庆";
 				TargetAttributes = {
+					374A90F81E1C4B560025CFA5 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Y6QZNMQWRN;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					3750667F1DF85D1C00B539D1 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = Y6QZNMQWRN;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -481,11 +573,20 @@
 			projectRoot = "";
 			targets = (
 				3750667F1DF85D1C00B539D1 /* Rainville */,
+				374A90F81E1C4B560025CFA5 /* Rainville_Widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		374A90F71E1C4B560025CFA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				374A91021E1C4B560025CFA5 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3750667E1DF85D1C00B539D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -517,6 +618,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		374A90F51E1C4B560025CFA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				374A90FF1E1C4B560025CFA5 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3750667C1DF85D1C00B539D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -546,7 +655,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		374A91051E1C4B560025CFA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 374A90F81E1C4B560025CFA5 /* Rainville_Widget */;
+			targetProxy = 374A91041E1C4B560025CFA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		374A91001E1C4B560025CFA5 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				374A91011E1C4B560025CFA5 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		378160E71E1970E700960928 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -570,6 +695,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		374A91071E1C4B560025CFA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Rainville_Widget/Rainville_Widget.entitlements;
+				DEVELOPMENT_TEAM = Y6QZNMQWRN;
+				INFOPLIST_FILE = Rainville_Widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ElwinFrederick.Rainville.Rainville-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		374A91081E1C4B560025CFA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Rainville_Widget/Rainville_Widget.entitlements;
+				DEVELOPMENT_TEAM = Y6QZNMQWRN;
+				INFOPLIST_FILE = Rainville_Widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ElwinFrederick.Rainville.Rainville-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		375066951DF85D1C00B539D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -668,6 +821,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Rainville/Rainville.entitlements;
 				DEVELOPMENT_TEAM = Y6QZNMQWRN;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Rainville/Classes/Macro/Macro.pch";
@@ -683,6 +837,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Rainville/Rainville.entitlements;
 				DEVELOPMENT_TEAM = Y6QZNMQWRN;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Rainville/Classes/Macro/Macro.pch";
@@ -697,6 +852,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		374A91091E1C4B560025CFA5 /* Build configuration list for PBXNativeTarget "Rainville_Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				374A91071E1C4B560025CFA5 /* Debug */,
+				374A91081E1C4B560025CFA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		3750667B1DF85D1C00B539D1 /* Build configuration list for PBXProject "Rainville" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

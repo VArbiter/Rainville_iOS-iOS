@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CCPlayActionDelegate <NSObject>
+
+@required
+- (void) ccHeaderButtonActionWithPlayOrPause : (BOOL) isPlay ;
+
+@end
+
 @interface CCMainHeaderView : UIView
+
+@property (nonatomic , assign) id <CCPlayActionDelegate> delegate ;
 
 - (instancetype) initFromNib ;
 
