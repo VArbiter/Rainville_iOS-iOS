@@ -96,7 +96,7 @@
     CCLog(@"_CC_PLAY_BUTTON_SELECTED_%@_",isPlay ? @"YES" : @"NO");
     [_handler ccPausePlayingWithCompleteHandler:^{
         CCLog(@"_CC_PAUSE/PLAY_SUCCEED_");
-    } withOption:(isPlay ? CCPlayOptionPause : CCPlayOptionPlay)];
+    } withOption:(isPlay ? CCPlayOptionPlay : CCPlayOptionPause)];
 }
 
 #pragma mark - Notification
