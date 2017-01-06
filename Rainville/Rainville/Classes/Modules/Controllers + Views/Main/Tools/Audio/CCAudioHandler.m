@@ -29,6 +29,7 @@ static CCAudioHandler *_handler = nil;
 - (void) ccSetAudioPlayer ;
 - (id) ccAudioPlayerSetWithPath : (NSURL *) urlPath ;
 - (void) ccTimerAction : (NSTimer *) sender ;
+- (NSString *) ccFormatteTime : (NSInteger) integerSeconds ;
 
 @end
 
@@ -182,15 +183,23 @@ static CCAudioHandler *_handler = nil;
         [self ccPausePlayingWithCompleteHandler:nil
                                      withOption:CCPlayOptionStop];
     }
-#warning TODO >>> 变成时间样式
     if (_block) {
         ccWeakSelf;
         _CC_Safe_Async_Block(^{
-            pSelf.block(isStop , ccStringFormat(@"%ld",pSelf.integerCountTime));
+            pSelf.block(isStop , [pSelf ccFormatteTime:pSelf.integerCountTime]);
         });
     }
 }
 
+- (NSString *) ccFormatteTime : (NSInteger) integerSeconds {
+    NSInteger fSeconds = integerSeconds % 60 ;
+    NSInteger fMinutes = (integerSeconds / 60) % 60 ;
+    NSInteger fHours = integerSeconds / 3600 ;
+    if (fHours < 1) {
+        return ccStringFormat(@"%02ld : %02ld", fMinutes , fSeconds);
+    }
+    return ccStringFormat(@"%02ld : %02ld : %02ld",fHours , fMinutes , fSeconds);
+}
 
 #pragma mark - System
 
