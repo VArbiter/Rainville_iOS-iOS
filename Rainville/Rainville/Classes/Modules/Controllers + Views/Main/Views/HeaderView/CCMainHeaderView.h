@@ -19,6 +19,8 @@
 
 @property (nonatomic , assign) id <CCPlayActionDelegate> delegate ;
 
+@property (weak, nonatomic) IBOutlet UILabel *labelCountingDown;
+
 - (instancetype) initFromNib ;
 
 - (void) ccSetUpDownLabel : (BOOL) isUp ;

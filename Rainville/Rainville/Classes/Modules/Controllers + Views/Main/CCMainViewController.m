@@ -18,7 +18,7 @@
 
 #import "UILabel+CCExtension.h"
 
-@interface CCMainViewController () <UITableViewDataSource , UITableViewDelegate , CCPlayActionDelegate >
+@interface CCMainViewController () <UITableViewDataSource , UITableViewDelegate , CCPlayActionDelegate , CCCellTimerDelegate >
 @property (weak, nonatomic) IBOutlet UILabel *labelPoem;
 
 @property (nonatomic , strong) UITableView *tableView ;
@@ -72,6 +72,7 @@
     _tableView.tableHeaderView = _headerView;
     
     _cell = [[CCMainScrollCell alloc] initWithFrame:CGRectNull];
+    _cell.delegate = self;
     ccWeakSelf;
     [_cell ccConfigureCellWithHandler:^(NSString *stringKey, NSInteger integerSelectedIndex) {
         [pSelf ccClickedAction:integerSelectedIndex
@@ -97,6 +98,18 @@
     [_handler ccPausePlayingWithCompleteHandler:^{
         CCLog(@"_CC_PAUSE/PLAY_SUCCEED_");
     } withOption:(isPlay ? CCPlayOptionPlay : CCPlayOptionPause)];
+}
+
+#pragma mark - CCCellTimerDelegate
+- (void)ccCellTimerWithSeconds:(NSInteger)integerSeconds {
+    CCLog(@"_CC_MAIN_TIMER_%ld",integerSeconds);
+    ccWeakSelf;
+    [_handler ccSetAutoStopWithSeconds:integerSeconds withBlock:^(BOOL isSucceed, id item) {
+        if ([item isKindOfClass:[NSString class]]) {
+            pSelf.headerView.labelCountingDown.text = (NSString *) item;
+        }
+        pSelf.headerView.labelCountingDown.hidden = isSucceed;
+    }];
 }
 
 #pragma mark - Notification

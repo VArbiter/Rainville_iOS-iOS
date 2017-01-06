@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CCCellTimerDelegate <NSObject>
+
+- (void) ccCellTimerWithSeconds : (NSInteger) integerSeconds ;
+
+@end
+
 @interface CCMainScrollCell : UITableViewCell
+
+@property (nonatomic , assign) id <CCCellTimerDelegate> delegate ;
 
 - (void) ccConfigureCellWithHandler : (void(^)(NSString * stringKey , NSInteger integerSelectedIndex)) block;
 

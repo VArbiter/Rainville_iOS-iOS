@@ -19,11 +19,16 @@ static CCAudioHandler *_handler = nil;
 @interface CCAudioHandler ()
 
 @property (nonatomic , strong) NSMutableArray *arrayPlayer ;
+@property (nonatomic , strong) NSTimer *timer ;
+@property (nonatomic , assign) NSInteger integerCountTime ;
+
+@property (nonatomic , copy) CCCommonBlock block;
 
 - (void) ccDefaultSettings ;
 
 - (void) ccSetAudioPlayer ;
 - (id) ccAudioPlayerSetWithPath : (NSURL *) urlPath ;
+- (void) ccTimerAction : (NSTimer *) sender ;
 
 @end
 
@@ -108,8 +113,30 @@ static CCAudioHandler *_handler = nil;
     [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:dictionary];
 }
 
-#pragma mark - Private
+- (void) ccSetAutoStopWithSeconds : (NSInteger) integerSeconds
+                        withBlock : (CCCommonBlock) block {
+    [_timer invalidate];
+    _timer = nil;
+    if (integerSeconds == 0) {
+        _integerCountTime = 0;
+        if (block) {
+            _CC_Safe_Async_Block(^{
+                block(YES , @"00 : 00");
+            });
+        }
+        return ;
+    }
+    _integerCountTime = integerSeconds;
+    _block = [block copy];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                              target:self
+                                            selector:@selector(ccTimerAction:)
+                                            userInfo:nil
+                                             repeats:YES];
+}
 
+
+#pragma mark - Private
 - (void) ccDefaultSettings {
     NSError *errorAudio ;
     _audioSession = [AVAudioSession sharedInstance];
@@ -119,6 +146,8 @@ static CCAudioHandler *_handler = nil;
         CCLog(@"_CC_AUDIO_ERROR_ %@",errorAudio);
         return ;
     }
+    
+    _integerCountTime = 0;
 }
 
 - (void) ccSetAudioPlayer {
@@ -143,6 +172,25 @@ static CCAudioHandler *_handler = nil;
     [player prepareToPlay];
     return player;
 }
+
+- (void) ccTimerAction : (NSTimer *) sender {
+    BOOL isStop = --_integerCountTime <= 0;
+    CCLog(@"_CC_COUNT_TIME_REMAIN_%ld",_integerCountTime);
+    if (isStop) {
+        [_timer invalidate];
+        _timer = nil;
+        [self ccPausePlayingWithCompleteHandler:nil
+                                     withOption:CCPlayOptionStop];
+    }
+#warning TODO >>> 变成时间样式
+    if (_block) {
+        ccWeakSelf;
+        _CC_Safe_Async_Block(^{
+            pSelf.block(isStop , ccStringFormat(@"%ld",pSelf.integerCountTime));
+        });
+    }
+}
+
 
 #pragma mark - System
 

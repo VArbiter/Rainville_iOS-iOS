@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelDesc;
 @property (weak, nonatomic) IBOutlet UILabel *labelAppName;
 @property (weak, nonatomic) IBOutlet UIView *viewLightLine;
-@property (weak, nonatomic) IBOutlet UILabel *labelCountingDown;
 
 - (IBAction)ccButtonPlayPauseActon:(UIButton *)sender;
 
@@ -87,6 +86,10 @@
     [_labelIcon ccWeatherIconsWithFontSize:70.0f
                                 withString:@"\uf006"];
     [_labelIcon sizeToFit];
+    
+    [_labelCountingDown ccMusketWithFontSize:25.0f
+                                  withString:@"00 : 00"];
+    _labelCountingDown.hidden = YES;
     
     if ([_CC_LANGUAGE_() containsString:@"English"]) {
         _buttonPlayPause.titleLabel.font = [UIFont ccMusketFontWithSize:15.0f];

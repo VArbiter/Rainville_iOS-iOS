@@ -30,4 +30,7 @@ typedef NS_ENUM(NSInteger , CCPlayOption) {
 
 - (void) ccSetInstantPlayingInfo : (NSString *) stringKey ;
 
+- (void) ccSetAutoStopWithSeconds : (NSInteger) integerSeconds
+                        withBlock : (CCCommonBlock) block;
+
 @end
