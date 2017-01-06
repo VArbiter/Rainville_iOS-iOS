@@ -55,14 +55,12 @@ static CCAudioHandler *_handler = nil;
             if ([player isKindOfClass:[AVAudioPlayer class]]) {
                 AVAudioPlayer *audioPlayer = (AVAudioPlayer *) player ;
                 audioPlayer.volume = [arrayVolume[i] floatValue];
-                if (![audioPlayer isPlaying]) {
-                    [pSelf ccPausePlayingWithCompleteHandler:nil
-                                                  withOption:CCPlayOptionPlay];
-                }
             }
         });
     }
     dispatch_group_notify(tGroup, dispatch_get_main_queue(), ^{
+        [pSelf ccPausePlayingWithCompleteHandler:nil
+                                      withOption:CCPlayOptionPlay];
         if (block) {
             _CC_Safe_Async_Block(^{
                 block();
@@ -77,6 +75,7 @@ static CCAudioHandler *_handler = nil;
         id player = _arrayPlayer[i];
         if ([player isKindOfClass:[AVAudioPlayer class]]) {
             AVAudioPlayer *audioPlayer = (AVAudioPlayer *) player ;
+            if (audioPlayer.volume <= 0.0f) continue;
             _CC_Safe_Async_Block(^{
                 switch (option) {
                     case CCPlayOptionStop:{
