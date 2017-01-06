@@ -36,7 +36,7 @@ Rainville For iOS /  聆雨 iOS 版本
 
 #### 注意 : 聆雨完全遵循 __*GPL*__ 协议
 
-#### 感谢 [明城](lucky@gracecode.com) (原作者) 在我开发 iOS 版本`聆雨`时给我的支持和技术指导 
+#### 感谢 [明城](http://www.gracecode.com) (原作者) 在我开发 iOS 版本`聆雨`时给我的支持和技术指导 
 
 __*Contact*__ : [ElwinFrederick](elwinfrederick@163.com) 
 
