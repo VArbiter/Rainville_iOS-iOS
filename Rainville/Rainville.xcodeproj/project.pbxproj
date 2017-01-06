@@ -60,6 +60,8 @@
 		37F5BD631E1FFDA500699E9F /* CCAuthorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F5BD621E1FFDA500699E9F /* CCAuthorInfoView.xib */; };
 		37F5BD681E200C2700699E9F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F5BD661E200C2700699E9F /* Default-568h@2x.png */; };
 		37F5BD691E200C2700699E9F /* ic_launcher_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F5BD671E200C2700699E9F /* ic_launcher_144.png */; };
+		37F5BD6C1E201BBA00699E9F /* CCCountDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5BD6B1E201BBA00699E9F /* CCCountDownView.m */; };
+		37F5BD6E1E201BD300699E9F /* CCCountDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F5BD6D1E201BD300699E9F /* CCCountDownView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +173,9 @@
 		37F5BD621E1FFDA500699E9F /* CCAuthorInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAuthorInfoView.xib; sourceTree = "<group>"; };
 		37F5BD661E200C2700699E9F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		37F5BD671E200C2700699E9F /* ic_launcher_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher_144.png; sourceTree = "<group>"; };
+		37F5BD6A1E201BBA00699E9F /* CCCountDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCountDownView.h; sourceTree = "<group>"; };
+		37F5BD6B1E201BBA00699E9F /* CCCountDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCountDownView.m; sourceTree = "<group>"; };
+		37F5BD6D1E201BD300699E9F /* CCCountDownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCountDownView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -515,6 +520,9 @@
 				37F5BD5F1E1FFD9700699E9F /* CCAuthorInfoView.h */,
 				37F5BD601E1FFD9700699E9F /* CCAuthorInfoView.m */,
 				37F5BD621E1FFDA500699E9F /* CCAuthorInfoView.xib */,
+				37F5BD6A1E201BBA00699E9F /* CCCountDownView.h */,
+				37F5BD6B1E201BBA00699E9F /* CCCountDownView.m */,
+				37F5BD6D1E201BD300699E9F /* CCCountDownView.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -638,6 +646,7 @@
 			files = (
 				3725678B1DFE86D80035E193 /* _6.wav in Resources */,
 				372567881DFE86D80035E193 /* _3.wav in Resources */,
+				37F5BD6E1E201BD300699E9F /* CCCountDownView.xib in Resources */,
 				37F5BD5E1E1FFD6800699E9F /* CCMainHeaderView.xib in Resources */,
 				3725678C1DFE86D80035E193 /* _7.wav in Resources */,
 				3725678A1DFE86D80035E193 /* _5.wav in Resources */,
@@ -695,6 +704,7 @@
 				3725676B1DFE84110035E193 /* CCAppDelegate.m in Sources */,
 				378161091E198D6500960928 /* UIFont+CCExtension.m in Sources */,
 				375066851DF85D1C00B539D1 /* main.m in Sources */,
+				37F5BD6C1E201BBA00699E9F /* CCCountDownView.m in Sources */,
 				378160DC1E19689200960928 /* MBProgressHUD.m in Sources */,
 				37BA5DCD1E1BC30000827DC5 /* CCHintHandler.m in Sources */,
 				378160FF1E19810D00960928 /* UIView+CCExtension.m in Sources */,

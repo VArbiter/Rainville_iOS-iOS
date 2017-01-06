@@ -13,6 +13,7 @@
 
 #import "CCLocalizedHelper.h"
 #import "CCAuthorInfoView.h"
+#import "CCCountDownView.h"
 
 @interface CCMainScrollCell ()
 
@@ -23,6 +24,7 @@
 @property (nonatomic , strong) CCMainLighterDataSource *lighterDataSource ;
 @property (nonatomic , strong) CCMainLighterDelegate *lighterDelegate ;
 @property (nonatomic , strong) CCAuthorInfoView *viewInfo ;
+@property (nonatomic , strong) CCCountDownView *viewCountDown ;
 
 
 - (void) ccDefaultSettings ;
@@ -40,6 +42,9 @@
     
     _viewInfo = [[CCAuthorInfoView alloc] initFromNib];
     [_scrollViewBottom addSubview:_viewInfo];
+    
+    _viewCountDown = [[CCCountDownView alloc] initFromNib];
+    [_scrollViewBottom addSubview:_viewCountDown];
     
     _tableView = [CCMainHandler ccCreateMainTableViewWithScrollView:_scrollViewBottom];
     [_scrollViewBottom addSubview:_tableView];
@@ -84,5 +89,6 @@
     [super setSelected:selected animated:animated];
     
 }
+_CC_DETECT_DEALLOC_
 
 @end

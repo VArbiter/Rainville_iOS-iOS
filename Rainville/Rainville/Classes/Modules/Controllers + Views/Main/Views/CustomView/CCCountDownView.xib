@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CCCountDownView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <pickerView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="sEw-M0-2Ly">
+                    <rect key="frame" x="163" y="0.0" width="50" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="684-bM-HCH"/>
+                    </constraints>
+                </pickerView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cN6-63-oyM">
+                    <rect key="frame" x="122" y="327" width="31" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9J-Ji-WqF">
+                    <rect key="frame" x="223" y="327" width="31" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="G9J-Ji-WqF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6fB-Vp-59t"/>
+                <constraint firstItem="G9J-Ji-WqF" firstAttribute="leading" secondItem="sEw-M0-2Ly" secondAttribute="trailing" constant="10" id="OzH-oZ-hfe"/>
+                <constraint firstItem="sEw-M0-2Ly" firstAttribute="leading" secondItem="cN6-63-oyM" secondAttribute="trailing" constant="10" id="XT4-rl-EAh"/>
+                <constraint firstItem="cN6-63-oyM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Zyw-zP-f5b"/>
+                <constraint firstItem="sEw-M0-2Ly" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="a9c-yQ-S9R"/>
+                <constraint firstItem="sEw-M0-2Ly" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gVh-fu-HOo"/>
+                <constraint firstAttribute="bottom" secondItem="sEw-M0-2Ly" secondAttribute="bottom" id="kFc-ac-1gH"/>
+                <constraint firstItem="sEw-M0-2Ly" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nOe-1X-OWe"/>
+            </constraints>
+            <connections>
+                <outlet property="labelLeft" destination="cN6-63-oyM" id="kYV-65-fGL"/>
+                <outlet property="labelRight" destination="G9J-Ji-WqF" id="VFY-J6-O49"/>
+                <outlet property="pickerViewTime" destination="sEw-M0-2Ly" id="1Ko-EP-NjF"/>
+            </connections>
+            <point key="canvasLocation" x="-46.5" y="-66.5"/>
+        </view>
+    </objects>
+</document>

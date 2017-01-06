@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonPlayPause;
 @property (weak, nonatomic) IBOutlet UILabel *labelDesc;
 @property (weak, nonatomic) IBOutlet UILabel *labelAppName;
+@property (weak, nonatomic) IBOutlet UIView *viewLightLine;
+@property (weak, nonatomic) IBOutlet UILabel *labelCountingDown;
 
 - (IBAction)ccButtonPlayPauseActon:(UIButton *)sender;
 
@@ -66,6 +68,7 @@
     [UIView animateWithDuration:0.5f animations:^{
         pSelf.labelAppName.alpha = isHidden ? 0.0f : 1.0f ;
         pSelf.labelDesc.alpha = isHidden ? 0.0f : 1.0f ;
+        pSelf.viewLightLine.alpha = isHidden ? 0.0f : 1.0f ;
     }];
 }
 
@@ -113,5 +116,7 @@
         [_delegate ccHeaderButtonActionWithPlayOrPause:sender.selected];
     }
 }
+
+_CC_DETECT_DEALLOC_
 
 @end
