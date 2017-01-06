@@ -15,7 +15,7 @@
 #import "CCAuthorInfoView.h"
 #import "CCCountDownView.h"
 
-@interface CCMainScrollCell ()
+@interface CCMainScrollCell () <CCCountDownDelegate>
 
 @property (nonatomic , strong) UIScrollView *scrollViewBottom ;
 @property (nonatomic , strong) UITableView *tableView ;
@@ -44,6 +44,7 @@
     [_scrollViewBottom addSubview:_viewInfo];
     
     _viewCountDown = [[CCCountDownView alloc] initFromNib];
+    _viewCountDown.delegate = self;
     [_scrollViewBottom addSubview:_viewCountDown];
     
     _tableView = [CCMainHandler ccCreateMainTableViewWithScrollView:_scrollViewBottom];
@@ -71,6 +72,11 @@
     _arrayItem = _CC_ARRAY_ITEM_();
 }
 
+#pragma mark - CCCountDownDelegate 
+- (void) ccCountDownWithTime:(NSInteger)integerSeconds {
+    CCLog(@"_CC_COUNT_DOWN_SECONDS_%ld",integerSeconds);
+}
+
 #pragma mark - System
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -89,6 +95,7 @@
     [super setSelected:selected animated:animated];
     
 }
+
 _CC_DETECT_DEALLOC_
 
 @end

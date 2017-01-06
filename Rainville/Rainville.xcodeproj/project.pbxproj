@@ -62,6 +62,7 @@
 		37F5BD691E200C2700699E9F /* ic_launcher_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F5BD671E200C2700699E9F /* ic_launcher_144.png */; };
 		37F5BD6C1E201BBA00699E9F /* CCCountDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5BD6B1E201BBA00699E9F /* CCCountDownView.m */; };
 		37F5BD6E1E201BD300699E9F /* CCCountDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F5BD6D1E201BD300699E9F /* CCCountDownView.xib */; };
+		37F5BD711E202AA900699E9F /* UIPickerView+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5BD701E202AA900699E9F /* UIPickerView+CCExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +177,8 @@
 		37F5BD6A1E201BBA00699E9F /* CCCountDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCountDownView.h; sourceTree = "<group>"; };
 		37F5BD6B1E201BBA00699E9F /* CCCountDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCountDownView.m; sourceTree = "<group>"; };
 		37F5BD6D1E201BD300699E9F /* CCCountDownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCountDownView.xib; sourceTree = "<group>"; };
+		37F5BD6F1E202AA900699E9F /* UIPickerView+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPickerView+CCExtension.h"; sourceTree = "<group>"; };
+		37F5BD701E202AA900699E9F /* UIPickerView+CCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPickerView+CCExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +379,8 @@
 				378161081E198D6500960928 /* UIFont+CCExtension.m */,
 				37BA5DB61E1BAEA800827DC5 /* UILabel+CCExtension.h */,
 				37BA5DB71E1BAEA800827DC5 /* UILabel+CCExtension.m */,
+				37F5BD6F1E202AA900699E9F /* UIPickerView+CCExtension.h */,
+				37F5BD701E202AA900699E9F /* UIPickerView+CCExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -694,6 +699,7 @@
 				372567781DFE84590035E193 /* CCMainViewController.m in Sources */,
 				37BA5DD51E1BD05400827DC5 /* UIColor+CCExtension.m in Sources */,
 				37F5BD611E1FFD9700699E9F /* CCAuthorInfoView.m in Sources */,
+				37F5BD711E202AA900699E9F /* UIPickerView+CCExtension.m in Sources */,
 				37BA5DB81E1BAEA800827DC5 /* UILabel+CCExtension.m in Sources */,
 				37BA5DD21E1BC34500827DC5 /* CCMainLighterTableView.m in Sources */,
 				37BA5DCC1E1BC30000827DC5 /* CCAudioHandler.m in Sources */,

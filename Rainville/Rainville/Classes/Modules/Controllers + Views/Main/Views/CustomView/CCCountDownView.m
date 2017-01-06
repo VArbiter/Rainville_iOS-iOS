@@ -12,6 +12,7 @@
 #import "CCLocalizedHelper.h"
 #import "UILabel+CCExtension.h"
 #import "UIFont+CCExtension.h"
+#import "UIPickerView+CCExtension.h"
 
 @interface CCCountDownView () <UIPickerViewDataSource , UIPickerViewDelegate>
 
@@ -51,7 +52,7 @@
     _pickerViewTime.delegate = self;
     _pickerViewTime.dataSource = self;
     
-    _arrayData = @[_CC_CANCEL_() , @"5" , @"10" , @"15" , @"20" , @"25" , @"30" , @"35" , @"40" , @"45" , @"50" , @"55" , @"60" , @"90" , @"120" ];
+    _arrayData = @[@"0" , @"5" , @"10" , @"15" , @"20" , @"25" , @"30" , @"35" , @"40" , @"45" , @"50" , @"55" , @"60" , @"90" , @"120" ];
 }
 
 #pragma mark - UIPickerViewDataSource
@@ -65,9 +66,8 @@
 #pragma mark - UIPickerViewDelegate
 
 - (NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return _arrayData[row];
+    return [_arrayData[row] integerValue] != 0 ? _arrayData[row] : _CC_CANCEL_();
 }
-
 - (CGFloat) pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
     return _CC_ScreenHeight() * 0.3f * 0.35f ;
 }
@@ -81,10 +81,14 @@
         labelPicker.textColor = _CC_HexColor(0xFEFEFE);
     }
     labelPicker.text = [self pickerView:pickerView titleForRow:row forComponent:component];
+    [pickerView ccCyanSeperateLine];
     return labelPicker;
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    
+    CCLog(@"_CC_PICKER_PICKED_%@",_arrayData[row]);
+    if ([_delegate respondsToSelector:@selector(ccCountDownWithTime:)]) {
+        [_delegate ccCountDownWithTime:([_arrayData[row] integerValue] * 60)];
+    }
 }
 
 

@@ -10,8 +10,8 @@
 
 @protocol CCCountDownDelegate <NSObject>
 
-// @return 00 : 00
-- (void) ccCountDownWithTime : (NSString *) stringTimes ;
+// @return min * 60 = secs
+- (void) ccCountDownWithTime : (NSInteger) integerSeconds ;
 
 @end
 
