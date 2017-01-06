@@ -101,8 +101,10 @@ static CCAudioHandler *_handler = nil;
     [dictionary setValue:stringKey forKey:MPMediaItemPropertyTitle];
     [dictionary setValue:_CC_APP_NAME_() forKey:MPMediaItemPropertyArtist];
     
-    MPMediaItemArtwork *artImage = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:@"ic_Launcher"]];
-    [dictionary setValue:artImage forKey:MPMediaItemPropertyArtwork];
+#warning TODO >>> 
+    // 暂时没有理想的封面图
+//    MPMediaItemArtwork *artImage = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:@"ic_Launcher"]];
+//    [dictionary setValue:artImage forKey:MPMediaItemPropertyArtwork];
     [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:dictionary];
 }
 

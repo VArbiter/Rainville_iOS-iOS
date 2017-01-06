@@ -18,7 +18,7 @@
 
 #import "UILabel+CCExtension.h"
 
-@interface CCMainViewController () <UITableViewDataSource , UITableViewDelegate , CCPlayActionDelegate>
+@interface CCMainViewController () <UITableViewDataSource , UITableViewDelegate , CCPlayActionDelegate >
 @property (weak, nonatomic) IBOutlet UILabel *labelPoem;
 
 @property (nonatomic , strong) UITableView *tableView ;

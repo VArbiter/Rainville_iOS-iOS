@@ -104,7 +104,7 @@ static BOOL _isFontRegistSuccess = NO;
     scrollView.bouncesZoom = NO;
     scrollView.pagingEnabled = YES;
     scrollView.backgroundColor = [UIColor clearColor] ;
-    scrollView.contentSize = CGSizeMake(_CC_ScreenWidth() * 2, scrollView.height);
+    scrollView.contentSize = CGSizeMake(_CC_ScreenWidth() * 3, scrollView.height);
     
     return scrollView;
 }

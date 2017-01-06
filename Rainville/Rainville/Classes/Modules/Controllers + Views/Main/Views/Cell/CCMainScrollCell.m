@@ -12,6 +12,7 @@
 #import "CCMainHandler.h"
 
 #import "CCLocalizedHelper.h"
+#import "CCAuthorInfoView.h"
 
 @interface CCMainScrollCell ()
 
@@ -21,6 +22,8 @@
 
 @property (nonatomic , strong) CCMainLighterDataSource *lighterDataSource ;
 @property (nonatomic , strong) CCMainLighterDelegate *lighterDelegate ;
+@property (nonatomic , strong) CCAuthorInfoView *viewInfo ;
+
 
 - (void) ccDefaultSettings ;
 
@@ -34,6 +37,9 @@
     
     _scrollViewBottom = [CCMainHandler ccCreateMainBottomScrollViewWithView];
     [self.contentView addSubview:_scrollViewBottom];
+    
+    _viewInfo = [[CCAuthorInfoView alloc] initFromNib];
+    [_scrollViewBottom addSubview:_viewInfo];
     
     _tableView = [CCMainHandler ccCreateMainTableViewWithScrollView:_scrollViewBottom];
     [_scrollViewBottom addSubview:_tableView];

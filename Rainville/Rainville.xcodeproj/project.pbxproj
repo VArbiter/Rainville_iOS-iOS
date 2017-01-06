@@ -52,12 +52,14 @@
 		37BA5DCF1E1BC30000827DC5 /* CCMainHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DCB1E1BC30000827DC5 /* CCMainHandler.m */; };
 		37BA5DD21E1BC34500827DC5 /* CCMainLighterTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DD11E1BC34500827DC5 /* CCMainLighterTableView.m */; };
 		37BA5DD51E1BD05400827DC5 /* UIColor+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DD41E1BD05400827DC5 /* UIColor+CCExtension.m */; };
-		37BA5DD91E1BE71700827DC5 /* CCMainScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DD81E1BE71700827DC5 /* CCMainScrollCell.m */; };
-		37BA5DDC1E1BEB7900827DC5 /* CCMainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DDB1E1BEB7900827DC5 /* CCMainHeaderView.m */; };
-		37BA5DDE1E1BEB8800827DC5 /* CCMainHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37BA5DDD1E1BEB8800827DC5 /* CCMainHeaderView.xib */; };
-		37BA5DE81E1C012700827DC5 /* CCLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA5DE61E1C012700827DC5 /* CCLaunchViewController.m */; };
-		37BA5DE91E1C012700827DC5 /* CCLaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37BA5DE71E1C012700827DC5 /* CCLaunchViewController.xib */; };
 		37BA5DEB1E1C039800827DC5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BA5DEA1E1C039800827DC5 /* MessageUI.framework */; };
+		37F5BD5C1E1FFD6800699E9F /* CCMainScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5BD561E1FFD6800699E9F /* CCMainScrollCell.m */; };
+		37F5BD5D1E1FFD6800699E9F /* CCMainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5BD5A1E1FFD6800699E9F /* CCMainHeaderView.m */; };
+		37F5BD5E1E1FFD6800699E9F /* CCMainHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F5BD5B1E1FFD6800699E9F /* CCMainHeaderView.xib */; };
+		37F5BD611E1FFD9700699E9F /* CCAuthorInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5BD601E1FFD9700699E9F /* CCAuthorInfoView.m */; };
+		37F5BD631E1FFDA500699E9F /* CCAuthorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F5BD621E1FFDA500699E9F /* CCAuthorInfoView.xib */; };
+		37F5BD681E200C2700699E9F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F5BD661E200C2700699E9F /* Default-568h@2x.png */; };
+		37F5BD691E200C2700699E9F /* ic_launcher_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F5BD671E200C2700699E9F /* ic_launcher_144.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,15 +160,17 @@
 		37BA5DD11E1BC34500827DC5 /* CCMainLighterTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMainLighterTableView.m; sourceTree = "<group>"; };
 		37BA5DD31E1BD05400827DC5 /* UIColor+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CCExtension.h"; sourceTree = "<group>"; };
 		37BA5DD41E1BD05400827DC5 /* UIColor+CCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CCExtension.m"; sourceTree = "<group>"; };
-		37BA5DD71E1BE71700827DC5 /* CCMainScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMainScrollCell.h; sourceTree = "<group>"; };
-		37BA5DD81E1BE71700827DC5 /* CCMainScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMainScrollCell.m; sourceTree = "<group>"; };
-		37BA5DDA1E1BEB7900827DC5 /* CCMainHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMainHeaderView.h; sourceTree = "<group>"; };
-		37BA5DDB1E1BEB7900827DC5 /* CCMainHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMainHeaderView.m; sourceTree = "<group>"; };
-		37BA5DDD1E1BEB8800827DC5 /* CCMainHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMainHeaderView.xib; sourceTree = "<group>"; };
-		37BA5DE51E1C012700827DC5 /* CCLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLaunchViewController.h; sourceTree = "<group>"; };
-		37BA5DE61E1C012700827DC5 /* CCLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLaunchViewController.m; sourceTree = "<group>"; };
-		37BA5DE71E1C012700827DC5 /* CCLaunchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLaunchViewController.xib; sourceTree = "<group>"; };
 		37BA5DEA1E1C039800827DC5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		37F5BD551E1FFD6800699E9F /* CCMainScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMainScrollCell.h; sourceTree = "<group>"; };
+		37F5BD561E1FFD6800699E9F /* CCMainScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMainScrollCell.m; sourceTree = "<group>"; };
+		37F5BD591E1FFD6800699E9F /* CCMainHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMainHeaderView.h; sourceTree = "<group>"; };
+		37F5BD5A1E1FFD6800699E9F /* CCMainHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMainHeaderView.m; sourceTree = "<group>"; };
+		37F5BD5B1E1FFD6800699E9F /* CCMainHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMainHeaderView.xib; sourceTree = "<group>"; };
+		37F5BD5F1E1FFD9700699E9F /* CCAuthorInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAuthorInfoView.h; sourceTree = "<group>"; };
+		37F5BD601E1FFD9700699E9F /* CCAuthorInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAuthorInfoView.m; sourceTree = "<group>"; };
+		37F5BD621E1FFDA500699E9F /* CCAuthorInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAuthorInfoView.xib; sourceTree = "<group>"; };
+		37F5BD661E200C2700699E9F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		37F5BD671E200C2700699E9F /* ic_launcher_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher_144.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +280,8 @@
 		372567661DFE84110035E193 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				37F5BD661E200C2700699E9F /* Default-568h@2x.png */,
+				37F5BD671E200C2700699E9F /* ic_launcher_144.png */,
 				378161001E1987E200960928 /* weather.otf */,
 				372567671DFE84110035E193 /* elegant.ttf */,
 			);
@@ -478,11 +484,9 @@
 		37BA5DD61E1BE6F700827DC5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				37BA5DD71E1BE71700827DC5 /* CCMainScrollCell.h */,
-				37BA5DD81E1BE71700827DC5 /* CCMainScrollCell.m */,
-				37BA5DDA1E1BEB7900827DC5 /* CCMainHeaderView.h */,
-				37BA5DDB1E1BEB7900827DC5 /* CCMainHeaderView.m */,
-				37BA5DDD1E1BEB8800827DC5 /* CCMainHeaderView.xib */,
+				37F5BD581E1FFD6800699E9F /* HeaderView */,
+				37F5BD541E1FFD6800699E9F /* Cell */,
+				37F5BD571E1FFD6800699E9F /* CustomView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -492,11 +496,37 @@
 			children = (
 				376596A41E1EDC2E001CE366 /* Launch Screen_ZH.storyboard */,
 				376596A51E1EDC2E001CE366 /* Launch Screen.storyboard */,
-				37BA5DE51E1C012700827DC5 /* CCLaunchViewController.h */,
-				37BA5DE61E1C012700827DC5 /* CCLaunchViewController.m */,
-				37BA5DE71E1C012700827DC5 /* CCLaunchViewController.xib */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		37F5BD541E1FFD6800699E9F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				37F5BD551E1FFD6800699E9F /* CCMainScrollCell.h */,
+				37F5BD561E1FFD6800699E9F /* CCMainScrollCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		37F5BD571E1FFD6800699E9F /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				37F5BD5F1E1FFD9700699E9F /* CCAuthorInfoView.h */,
+				37F5BD601E1FFD9700699E9F /* CCAuthorInfoView.m */,
+				37F5BD621E1FFDA500699E9F /* CCAuthorInfoView.xib */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		37F5BD581E1FFD6800699E9F /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				37F5BD591E1FFD6800699E9F /* CCMainHeaderView.h */,
+				37F5BD5A1E1FFD6800699E9F /* CCMainHeaderView.m */,
+				37F5BD5B1E1FFD6800699E9F /* CCMainHeaderView.xib */,
+			);
+			path = HeaderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -608,9 +638,10 @@
 			files = (
 				3725678B1DFE86D80035E193 /* _6.wav in Resources */,
 				372567881DFE86D80035E193 /* _3.wav in Resources */,
+				37F5BD5E1E1FFD6800699E9F /* CCMainHeaderView.xib in Resources */,
 				3725678C1DFE86D80035E193 /* _7.wav in Resources */,
 				3725678A1DFE86D80035E193 /* _5.wav in Resources */,
-				37BA5DDE1E1BEB8800827DC5 /* CCMainHeaderView.xib in Resources */,
+				37F5BD681E200C2700699E9F /* Default-568h@2x.png in Resources */,
 				3725678D1DFE86D80035E193 /* _8.wav in Resources */,
 				372567891DFE86D80035E193 /* _4.wav in Resources */,
 				378160F11E1972FB00960928 /* ArrayItem_CH.plist in Resources */,
@@ -619,7 +650,7 @@
 				372567861DFE86D80035E193 /* _1.wav in Resources */,
 				372567851DFE86D80035E193 /* _0.wav in Resources */,
 				3725678E1DFE86D80035E193 /* _9.wav in Resources */,
-				37BA5DE91E1C012700827DC5 /* CCLaunchViewController.xib in Resources */,
+				37F5BD631E1FFDA500699E9F /* CCAuthorInfoView.xib in Resources */,
 				378161011E1987E200960928 /* weather.otf in Resources */,
 				375066901DF85D1C00B539D1 /* Assets.xcassets in Resources */,
 				378160E51E1970E700960928 /* Localizable.strings in Resources */,
@@ -629,6 +660,7 @@
 				372567791DFE84590035E193 /* CCMainViewController.xib in Resources */,
 				376596A71E1EDC2E001CE366 /* Launch Screen.storyboard in Resources */,
 				3725676F1DFE84110035E193 /* elegant.ttf in Resources */,
+				37F5BD691E200C2700699E9F /* ic_launcher_144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,15 +682,14 @@
 				37BA5DCE1E1BC30000827DC5 /* CCLocalizedHelper.m in Sources */,
 				372567741DFE84280035E193 /* CCBaseViewController.m in Sources */,
 				37BA5DCF1E1BC30000827DC5 /* CCMainHandler.m in Sources */,
-				37BA5DE81E1C012700827DC5 /* CCLaunchViewController.m in Sources */,
 				372567781DFE84590035E193 /* CCMainViewController.m in Sources */,
 				37BA5DD51E1BD05400827DC5 /* UIColor+CCExtension.m in Sources */,
+				37F5BD611E1FFD9700699E9F /* CCAuthorInfoView.m in Sources */,
 				37BA5DB81E1BAEA800827DC5 /* UILabel+CCExtension.m in Sources */,
 				37BA5DD21E1BC34500827DC5 /* CCMainLighterTableView.m in Sources */,
 				37BA5DCC1E1BC30000827DC5 /* CCAudioHandler.m in Sources */,
+				37F5BD5D1E1FFD6800699E9F /* CCMainHeaderView.m in Sources */,
 				3725676C1DFE84110035E193 /* CCCommonDef.m in Sources */,
-				37BA5DD91E1BE71700827DC5 /* CCMainScrollCell.m in Sources */,
-				37BA5DDC1E1BEB7900827DC5 /* CCMainHeaderView.m in Sources */,
 				378160D01E19560B00960928 /* NSURL+CCExtension.m in Sources */,
 				376596AA1E1EE1BF001CE366 /* CCAudioPreset.m in Sources */,
 				3725676B1DFE84110035E193 /* CCAppDelegate.m in Sources */,
@@ -667,6 +698,7 @@
 				378160DC1E19689200960928 /* MBProgressHUD.m in Sources */,
 				37BA5DCD1E1BC30000827DC5 /* CCHintHandler.m in Sources */,
 				378160FF1E19810D00960928 /* UIView+CCExtension.m in Sources */,
+				37F5BD5C1E1FFD6800699E9F /* CCMainScrollCell.m in Sources */,
 				378160D31E19580100960928 /* UIImage+CCExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
