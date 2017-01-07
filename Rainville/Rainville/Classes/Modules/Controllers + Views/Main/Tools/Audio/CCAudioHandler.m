@@ -19,7 +19,8 @@ static CCAudioHandler *_handler = nil;
 @interface CCAudioHandler ()
 
 @property (nonatomic , strong) NSMutableArray *arrayPlayer ;
-@property (nonatomic , strong) NSTimer *timer ;
+
+@property (nonatomic , strong) dispatch_source_t timer ;
 @property (nonatomic , assign) NSInteger integerCountTime ;
 
 @property (nonatomic , copy) CCCommonBlock block;
@@ -28,7 +29,7 @@ static CCAudioHandler *_handler = nil;
 
 - (void) ccSetAudioPlayer ;
 - (id) ccAudioPlayerSetWithPath : (NSURL *) urlPath ;
-- (void) ccTimerAction : (NSTimer *) sender ;
+- (void) ccTimerAction : (dispatch_group_t) sender ;
 - (NSString *) ccFormatteTime : (NSInteger) integerSeconds ;
 
 @end
@@ -45,60 +46,59 @@ static CCAudioHandler *_handler = nil;
 
 - (void) ccSetAudioPlayerWithVolumeArray : (NSArray *) arrayVolume
                      withCompleteHandler : (dispatch_block_t) block {
-    dispatch_group_t tGroup = dispatch_group_create() ;
     ccWeakSelf;
     for (short i = 0; i < 10; i++) {
-        const char * str = [ccStringFormat(@"queue_%d",i) UTF8String];
-        dispatch_queue_t tQueue = dispatch_queue_create(str , DISPATCH_QUEUE_PRIORITY_DEFAULT);
-        dispatch_group_async(tGroup, tQueue, ^{
-            id player = _arrayPlayer[i];
-            if ([player isKindOfClass:[AVAudioPlayer class]]) {
-                AVAudioPlayer *audioPlayer = (AVAudioPlayer *) player ;
-                audioPlayer.volume = [arrayVolume[i] floatValue];
-            }
+        id player = pSelf.arrayPlayer[i];
+        if ([player isKindOfClass:[AVAudioPlayer class]]) {
+            AVAudioPlayer *audioPlayer = (AVAudioPlayer *) player ;
+            audioPlayer.volume = [arrayVolume[i] floatValue];
+        }
+    }
+    [pSelf ccPausePlayingWithCompleteHandler:nil
+                                  withOption:CCPlayOptionPlay];
+    if (block) {
+        _CC_Safe_Async_Block(^{
+            block();
         });
     }
+}
+
+- (void) ccPausePlayingWithCompleteHandler : (dispatch_block_t) block
+                                withOption : (CCPlayOption) option {
+    dispatch_group_t tGroup = dispatch_group_create() ;
+    dispatch_queue_t tQueue = dispatch_queue_create("queue_Group" , DISPATCH_QUEUE_PRIORITY_DEFAULT);
+    for (short i = 0; i < 10; i++) {
+        id player = _arrayPlayer[i];
+        if ([player isKindOfClass:[AVAudioPlayer class]]) {
+            AVAudioPlayer *audioPlayer = (AVAudioPlayer *) player ;
+            if (audioPlayer.volume <= 0.0f) continue;
+            dispatch_group_async(tGroup, tQueue, ^{
+                _CC_Safe_Async_Block(^{
+                    switch (option) {
+                        case CCPlayOptionStop:{
+                            [audioPlayer stop];
+                        }break;
+                        case CCPlayOptionPlay:{
+                            [audioPlayer play];
+                        }break;
+                        case CCPlayOptionPause:{
+                            [audioPlayer pause];
+                        }
+                            
+                        default:
+                            break;
+                    }
+                });
+            });
+        }
+    }
     dispatch_group_notify(tGroup, dispatch_get_main_queue(), ^{
-        [pSelf ccPausePlayingWithCompleteHandler:nil
-                                      withOption:CCPlayOptionPlay];
         if (block) {
             _CC_Safe_Async_Block(^{
                 block();
             });
         }
     });
-}
-
-- (void) ccPausePlayingWithCompleteHandler : (dispatch_block_t) block
-                                withOption : (CCPlayOption) option {
-    for (short i = 0; i < 10; i++) {
-        id player = _arrayPlayer[i];
-        if ([player isKindOfClass:[AVAudioPlayer class]]) {
-            AVAudioPlayer *audioPlayer = (AVAudioPlayer *) player ;
-            if (audioPlayer.volume <= 0.0f) continue;
-            _CC_Safe_Async_Block(^{
-                switch (option) {
-                    case CCPlayOptionStop:{
-                        [audioPlayer stop];
-                    }break;
-                    case CCPlayOptionPlay:{
-                        [audioPlayer play];
-                    }break;
-                    case CCPlayOptionPause:{
-                        [audioPlayer pause];
-                    }
-                        
-                    default:
-                        break;
-                }
-            });
-        }
-    }
-    if (block) {
-        _CC_Safe_Async_Block(^{
-            block();
-        });
-    }
 }
 
 - (void) ccSetInstantPlayingInfo : (NSString *) stringKey {
@@ -115,8 +115,10 @@ static CCAudioHandler *_handler = nil;
 
 - (void) ccSetAutoStopWithSeconds : (NSInteger) integerSeconds
                         withBlock : (CCCommonBlock) block {
-    [_timer invalidate];
-    _timer = nil;
+    if (_timer) {
+        dispatch_source_cancel(_timer);
+        _timer = nil;
+    }
     if (integerSeconds == 0) {
         _integerCountTime = 0;
         if (block) {
@@ -128,11 +130,17 @@ static CCAudioHandler *_handler = nil;
     }
     _integerCountTime = integerSeconds;
     _block = [block copy];
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f
-                                              target:self
-                                            selector:@selector(ccTimerAction:)
-                                            userInfo:nil
-                                             repeats:YES];
+    
+    ccWeakSelf;
+    __block dispatch_group_t group = dispatch_group_create();
+    dispatch_group_enter(group);
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), 1.0f * NSEC_PER_SEC, 0);
+    dispatch_source_set_event_handler(_timer, ^{
+        [pSelf ccTimerAction:group];
+    });
+    dispatch_resume(_timer);
 }
 
 
@@ -173,14 +181,18 @@ static CCAudioHandler *_handler = nil;
     return player;
 }
 
-- (void) ccTimerAction : (NSTimer *) sender {
+- (void) ccTimerAction : (dispatch_group_t) sender {
     BOOL isStop = --_integerCountTime <= 0;
-    CCLog(@"_CC_COUNT_TIME_REMAIN_%ld",_integerCountTime);
+    CCLog(@"_CC_COUNT_TIME_REMAIN_%ld",(long)_integerCountTime);
     if (isStop) {
-        [_timer invalidate];
+        dispatch_source_cancel(_timer);
         _timer = nil;
-        [self ccPausePlayingWithCompleteHandler:nil
-                                     withOption:CCPlayOptionStop];
+        ccWeakSelf ;
+        dispatch_source_set_cancel_handler(_timer, ^{
+            [pSelf ccPausePlayingWithCompleteHandler:nil
+                                          withOption:CCPlayOptionStop];
+            dispatch_group_leave(sender);
+        });
     }
     if (_block) {
         ccWeakSelf;
@@ -191,9 +203,9 @@ static CCAudioHandler *_handler = nil;
 }
 
 - (NSString *) ccFormatteTime : (NSInteger) integerSeconds {
-    NSInteger fSeconds = integerSeconds % 60 ;
-    NSInteger fMinutes = (integerSeconds / 60) % 60 ;
-    NSInteger fHours = integerSeconds / 3600 ;
+    long fSeconds = integerSeconds % 60 ;
+    long fMinutes = (integerSeconds / 60) % 60 ;
+    long fHours = integerSeconds / 3600 ;
     if (fHours < 1) {
         return ccStringFormat(@"%02ld : %02ld", fMinutes , fSeconds);
     }

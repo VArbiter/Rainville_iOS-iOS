@@ -74,7 +74,7 @@
 
 #pragma mark - CCCountDownDelegate 
 - (void) ccCountDownWithTime:(NSInteger)integerSeconds {
-    CCLog(@"_CC_COUNT_DOWN_SECONDS_%ld",integerSeconds);
+    CCLog(@"_CC_COUNT_DOWN_SECONDS_%ld",(long)integerSeconds);
     if ([_delegate respondsToSelector:@selector(ccCellTimerWithSeconds:)]) {
         [_delegate ccCellTimerWithSeconds:integerSeconds];
     }

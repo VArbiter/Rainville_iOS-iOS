@@ -102,7 +102,7 @@
 
 #pragma mark - CCCellTimerDelegate
 - (void)ccCellTimerWithSeconds:(NSInteger)integerSeconds {
-    CCLog(@"_CC_MAIN_TIMER_%ld",integerSeconds);
+    CCLog(@"_CC_MAIN_TIMER_%ld",(long)integerSeconds);
     ccWeakSelf;
     [_handler ccSetAutoStopWithSeconds:integerSeconds withBlock:^(BOOL isSucceed, id item) {
         if ([item isKindOfClass:[NSString class]]) {
@@ -151,7 +151,7 @@
 
 - (void) ccClickedAction : (NSInteger) integerIndex
                  withKey : (NSString *) stringKey {
-    CCLog(@"_CC_CLICKED_%ld_KEY_%@_",integerIndex,stringKey);
+    CCLog(@"_CC_CLICKED_%ld_KEY_%@_",(long)integerIndex,stringKey);
     ccWeakSelf;
     [_handler ccSetAudioPlayerWithVolumeArray:_dictionaryTheme[stringKey] withCompleteHandler:^{
         CCLog(@"_CC_PLAY_SUCCEED_");
