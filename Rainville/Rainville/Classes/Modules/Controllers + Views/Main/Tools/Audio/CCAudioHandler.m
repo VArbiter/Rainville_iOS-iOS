@@ -184,18 +184,17 @@ static CCAudioHandler *_handler = nil;
 - (void) ccTimerAction : (dispatch_group_t) sender {
     BOOL isStop = --_integerCountTime <= 0;
     CCLog(@"_CC_COUNT_TIME_REMAIN_%ld",(long)_integerCountTime);
+    ccWeakSelf ;
     if (isStop) {
-        dispatch_source_cancel(_timer);
-        _timer = nil;
-        ccWeakSelf ;
         dispatch_source_set_cancel_handler(_timer, ^{
             [pSelf ccPausePlayingWithCompleteHandler:nil
                                           withOption:CCPlayOptionStop];
             dispatch_group_leave(sender);
         });
+        dispatch_source_cancel(_timer);
+        _timer = nil;
     }
     if (_block) {
-        ccWeakSelf;
         _CC_Safe_Async_Block(^{
             pSelf.block(isStop , [pSelf ccFormatteTime:pSelf.integerCountTime]);
         });
