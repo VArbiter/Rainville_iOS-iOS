@@ -25,4 +25,8 @@
 
 - (void) ccSetUpDownLabel : (BOOL) isUp ;
 
+- (void) ccSetButtonStatus : (BOOL) isSeleced ;
+
+- (BOOL) ccIsAudioPlay ;
+
 @end

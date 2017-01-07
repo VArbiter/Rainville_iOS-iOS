@@ -14,10 +14,21 @@
 
 @end
 
+typedef void(^CCSelectBlock)(NSString * stringKey , NSInteger integerSelectedIndex);
+
+typedef NS_ENUM(NSInteger , CCAudioControl) {
+    CCAudioControlNext = 0 ,
+    CCAudioControlPrevious
+};
+
 @interface CCMainScrollCell : UITableViewCell
 
 @property (nonatomic , assign) id <CCCellTimerDelegate> delegate ;
 
-- (void) ccConfigureCellWithHandler : (void(^)(NSString * stringKey , NSInteger integerSelectedIndex)) block;
+- (void) ccConfigureCellWithHandler : (CCSelectBlock) block;
+
+- (void) ccSetPlayingAudio : (CCAudioControl) control ;
+
+- (void) ccSetTimer : (BOOL) isEnabled ;
 
 @end

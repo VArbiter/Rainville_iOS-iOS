@@ -21,4 +21,8 @@
 
 - (instancetype) initFromNib ;
 
+- (void) ccEnableCountingDown : (BOOL) isEnable ;
+
+- (void) ccCancelAndResetCountingDown ;
+
 @end

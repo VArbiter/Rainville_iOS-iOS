@@ -98,6 +98,8 @@
     [_handler ccPausePlayingWithCompleteHandler:^{
         CCLog(@"_CC_PAUSE/PLAY_SUCCEED_");
     } withOption:(isPlay ? CCPlayOptionPlay : CCPlayOptionPause)];
+#warning TODO >>> 定时器启用条件 逻辑问题 . 
+    [_cell ccSetTimer:isPlay];
 }
 
 #pragma mark - CCCellTimerDelegate
@@ -121,20 +123,19 @@
             [_handler ccPausePlayingWithCompleteHandler:^{
                 CCLog(@"_CC_PAUSE_SUCCEED_");
             } withOption:CCPlayOptionPause];
+            [_headerView ccSetButtonStatus:NO];
         }break;
         case UIEventSubtypeRemoteControlPlay:{
             [_handler ccPausePlayingWithCompleteHandler:^{
                 CCLog(@"_CC_PLAY_SUCCEED_");
             } withOption:CCPlayOptionPlay];
+            [_headerView ccSetButtonStatus:YES];
         }break;
         case UIEventSubtypeRemoteControlNextTrack:{
-            
+            [_cell ccSetPlayingAudio:CCAudioControlNext];
         }break;
         case UIEventSubtypeRemoteControlPreviousTrack:{
-            
-        }break;
-        case UIEventSubtypeRemoteControlTogglePlayPause:{
-            
+            [_cell ccSetPlayingAudio:CCAudioControlPrevious];
         }break;
             
         default:
@@ -157,6 +158,7 @@
         CCLog(@"_CC_PLAY_SUCCEED_");
         [pSelf.handler ccSetInstantPlayingInfo:stringKey];
     }];
+    [_headerView ccSetButtonStatus:YES];
 }
 
 - (void)didReceiveMemoryWarning {

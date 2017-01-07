@@ -132,7 +132,7 @@ static CCAudioHandler *_handler = nil;
     _block = [block copy];
     
     ccWeakSelf;
-    __block dispatch_group_t group = dispatch_group_create();
+    __block dispatch_group_t group = dispatch_group_create(); // 若有 , 保持队列同步 .
     dispatch_group_enter(group);
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);

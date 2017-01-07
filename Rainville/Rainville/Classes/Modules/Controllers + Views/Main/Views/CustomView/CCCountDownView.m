@@ -42,6 +42,17 @@
     return self;
 }
 
+- (void) ccEnableCountingDown : (BOOL) isEnable {
+    _pickerViewTime.alpha = isEnable ? 1.0f : 0.8f ;
+    _pickerViewTime.userInteractionEnabled = isEnable;
+}
+
+- (void) ccCancelAndResetCountingDown {
+    [_pickerViewTime selectRow:0
+                   inComponent:0
+                      animated:YES];
+}
+
 #pragma mark - Private
 - (void) ccDefaultSettings {
     [_labelLeft ccMusketWithFontSize:12.0f

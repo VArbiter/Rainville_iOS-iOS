@@ -55,6 +55,17 @@
     [self ccSetBriefInfoHidden:!isUp];
 }
 
+- (void) ccSetButtonStatus : (BOOL) isSeleced {
+    _buttonPlayPause.selected = isSeleced;
+    [_buttonPlayPause setBackgroundColor:_CC_HexColor((isSeleced ? 0x22A1A2 : 0x333333))];
+}
+
+- (BOOL) ccIsAudioPlay {
+    return _buttonPlayPause.selected;
+}
+
+#pragma mark - Private (s)
+
 - (void) ccSetBackGroundOpaque : (BOOL) isOpaque {
     ccWeakSelf;
     [UIView animateWithDuration:0.5f animations:^{
@@ -70,8 +81,6 @@
         pSelf.viewLightLine.alpha = isHidden ? 0.0f : 1.0f ;
     }];
 }
-
-#pragma mark - Private (s)
 
 - (void) ccInitSubViewSettings {
     if ([_CC_LANGUAGE_() containsString:@"English"]) {

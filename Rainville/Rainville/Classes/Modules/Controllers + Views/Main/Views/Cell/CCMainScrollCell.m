@@ -26,6 +26,8 @@
 @property (nonatomic , strong) CCAuthorInfoView *viewInfo ;
 @property (nonatomic , strong) CCCountDownView *viewCountDown ;
 
+@property (nonatomic , copy) CCSelectBlock block;
+@property (nonatomic , assign) NSInteger integerSelectedIndex ;
 
 - (void) ccDefaultSettings ;
 
@@ -33,7 +35,7 @@
 
 @implementation CCMainScrollCell
 
-- (void) ccConfigureCellWithHandler : (void(^)(NSString * stringKey , NSInteger integerSelectedIndex)) block {
+- (void) ccConfigureCellWithHandler : (CCSelectBlock) block {
     
     self.contentView.backgroundColor = [UIColor clearColor];
     
@@ -55,7 +57,9 @@
     _tableView.dataSource = tDataSource;
     
     ccWeakSelf;
+    _block = [block copy];
     _lighterDelegate = [[CCMainLighterDelegate alloc] initWithSelectedBlock:^(NSInteger integerSelectedIndex) {
+        pSelf.integerSelectedIndex = integerSelectedIndex;
         if (block) {
             _CC_Safe_Async_Block(^{
                 block(pSelf.arrayItem[integerSelectedIndex] , integerSelectedIndex);
@@ -66,10 +70,44 @@
     _tableView.delegate = tDelegate;
 }
 
+- (void) ccSetPlayingAudio : (CCAudioControl) control {
+    switch (control) {
+        case CCAudioControlNext:{
+            if (++_integerSelectedIndex > _arrayItem.count - 1) {
+                --_integerSelectedIndex;
+            }
+        }break;
+        case CCAudioControlPrevious:{
+            if (--_integerSelectedIndex < 0) {
+                ++_integerSelectedIndex;
+            }
+        }break;
+        default:
+            break;
+    }
+    
+    ccWeakSelf;
+    if (_block) {
+        _CC_Safe_Async_Block(^{
+            pSelf.block(pSelf.arrayItem[pSelf.integerSelectedIndex] , pSelf.integerSelectedIndex);
+        });
+    }
+}
+
+- (void) ccSetTimer : (BOOL) isEnabled {
+    if (isEnabled) {
+        [_viewCountDown ccEnableCountingDown:isEnabled];
+    } else {
+        [_viewCountDown ccEnableCountingDown:NO];
+        [_viewCountDown ccCancelAndResetCountingDown];
+    }
+}
+
 #pragma mark - Private 
 
 - (void) ccDefaultSettings {
     _arrayItem = _CC_ARRAY_ITEM_();
+    _integerSelectedIndex = 0;
 }
 
 #pragma mark - CCCountDownDelegate 
@@ -86,7 +124,7 @@
     self = [super initWithFrame:CGRectMake(0,
                                            0,
                                            _CC_ScreenWidth(),
-                                           _CC_ScreenHeight() *0.3f)];
+                                           _CC_ScreenHeight() * 0.3f)];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         [self ccDefaultSettings];
