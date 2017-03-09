@@ -50,8 +50,8 @@ UIImage * _CC_ImageWithCache(NSString * stringImageName , BOOL isNeedCache) ;
 
 UIImage * _CC_Image(NSString * stringImageName) ;
 
-void _CC_Safe_Sync_Block(dispatch_block_t block);
+void _CC_Safe_Sync_Block(id block_nil , dispatch_block_t block);
 
-void _CC_Safe_Async_Block(dispatch_block_t block);
+void _CC_Safe_Async_Block(id block_nil , dispatch_block_t block);
 
 @end

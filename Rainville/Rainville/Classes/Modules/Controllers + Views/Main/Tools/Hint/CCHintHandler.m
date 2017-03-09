@@ -81,25 +81,21 @@ static const float _CC_HINT_DELAY_ = 2.0f ;
         UIAlertAction *actionConfirm = [UIAlertAction actionWithTitle:_CC_CONFIRM_()
                                                                 style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * _Nonnull action) {
-            _CC_Safe_Async_Block(^{
-                if (block) {
-                    block(CCClickOptionConfirm);
-                }
+            _CC_Safe_Async_Block(block , ^{
+                block(CCClickOptionConfirm);
             });
         }];
         UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:_CC_CANCEL_()
                                                                style:UIAlertActionStyleDefault
                                                              handler:^(UIAlertAction * _Nonnull action) {
-            _CC_Safe_Async_Block(^{
-                if (block) {
-                    block(CCClickOptionCancel);
-                }
+            _CC_Safe_Async_Block(block , ^{
+                block(CCClickOptionCancel);
             });
         }];
         [controller addAction:actionConfirm];
         [controller addAction:actionCancel];
     }
-    _CC_Safe_Async_Block(^{
+    _CC_Safe_Async_Block(block , ^{
         [[[UIApplication sharedApplication].delegate window].rootViewController presentViewController:controller
                                                                                              animated:YES
                                                                                            completion:^{
@@ -109,9 +105,7 @@ static const float _CC_HINT_DELAY_ = 2.0f ;
                                dispatch_get_main_queue(),
                                ^{
                     [controller dismissViewControllerAnimated:YES completion:^{
-                        if (block) {
-                            block(CCClickOptionAutoDismiss);
-                        }
+                        block(CCClickOptionAutoDismiss);
                     }];
                 });
             }

@@ -49,10 +49,8 @@ static BOOL _isFontRegistSuccess = NO;
     isHeadphoneInsert = [(__bridge NSString *)state isEqualToString:@"Headphone"]
                         || [(__bridge NSString *)state isEqualToString:@"HeadsetInOut"]) ;
 #endif
-    _CC_Safe_Async_Block(^{
-        if (block) {
-            block(isHeadphoneInsert , nil);
-        }
+    _CC_Safe_Async_Block(block , ^{
+        block(isHeadphoneInsert , nil);
     });
     return isHeadphoneInsert;
 }
@@ -70,10 +68,8 @@ static BOOL _isFontRegistSuccess = NO;
                             &state);
     isMuteEnabled = CFStringGetLength(state) == 0 ;
 #endif
-    _CC_Safe_Async_Block(^{
-        if (block) {
-            block(isMuteEnabled , nil);
-        }
+    _CC_Safe_Async_Block(block , ^{
+        block(isMuteEnabled , nil);
     });
     return isMuteEnabled;
 }

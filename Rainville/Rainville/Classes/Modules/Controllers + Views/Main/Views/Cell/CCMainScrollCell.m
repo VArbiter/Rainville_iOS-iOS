@@ -60,11 +60,9 @@
     _block = [block copy];
     _lighterDelegate = [[CCMainLighterDelegate alloc] initWithSelectedBlock:^(NSInteger integerSelectedIndex) {
         pSelf.integerSelectedIndex = integerSelectedIndex;
-        if (block) {
-            _CC_Safe_Async_Block(^{
-                block(pSelf.arrayItem[integerSelectedIndex] , integerSelectedIndex);
-            });
-        }
+        _CC_Safe_Async_Block(block , ^{
+            block(pSelf.arrayItem[integerSelectedIndex] , integerSelectedIndex);
+        });
     }];
     __unsafe_unretained CCMainLighterDelegate *tDelegate = _lighterDelegate;
     _tableView.delegate = tDelegate;
@@ -87,18 +85,14 @@
     }
     
     ccWeakSelf;
-    if (_block) {
-        _CC_Safe_Async_Block(^{
-            pSelf.block(pSelf.arrayItem[pSelf.integerSelectedIndex] , pSelf.integerSelectedIndex);
-        });
-    }
+    _CC_Safe_Async_Block(_block , ^{
+        pSelf.block(pSelf.arrayItem[pSelf.integerSelectedIndex] , pSelf.integerSelectedIndex);
+    });
 }
 
 - (void) ccSetTimer : (BOOL) isEnabled {
-    if (isEnabled) {
-        [_viewCountDown ccEnableCountingDown:isEnabled];
-    } else {
-        [_viewCountDown ccEnableCountingDown:NO];
+    [_viewCountDown ccEnableCountingDown:isEnabled];
+    if (!isEnabled) {
         [_viewCountDown ccCancelAndResetCountingDown];
     }
 }

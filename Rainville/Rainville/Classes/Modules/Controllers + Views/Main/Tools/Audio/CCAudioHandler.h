@@ -11,9 +11,9 @@
 @class AVAudioSession;
 
 typedef NS_ENUM(NSInteger , CCPlayOption) {
-    CCPlayOptionStop = 0 ,
-    CCPlayOptionPlay ,
-    CCPlayOptionPause
+    CCPlayOptionPlay = 0 ,
+    CCPlayOptionPause ,
+    CCPlayOptionStop 
 };
 
 @interface CCAudioHandler : NSObject

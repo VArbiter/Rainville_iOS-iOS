@@ -100,6 +100,9 @@
     } withOption:(isPlay ? CCPlayOptionPlay : CCPlayOptionPause)];
 #warning TODO >>> 定时器启用条件 逻辑问题 . 
     [_cell ccSetTimer:isPlay];
+    if (!isPlay) {
+        [self ccCellTimerWithSeconds:0];
+    }
 }
 
 #pragma mark - CCCellTimerDelegate

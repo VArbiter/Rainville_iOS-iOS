@@ -56,48 +56,42 @@ static CCAudioHandler *_handler = nil;
     }
     [pSelf ccPausePlayingWithCompleteHandler:nil
                                   withOption:CCPlayOptionPlay];
-    if (block) {
-        _CC_Safe_Async_Block(^{
-            block();
-        });
-    }
+    _CC_Safe_Async_Block(block , ^{
+        block();
+    });
 }
 
 - (void) ccPausePlayingWithCompleteHandler : (dispatch_block_t) block
                                 withOption : (CCPlayOption) option {
     dispatch_group_t tGroup = dispatch_group_create() ;
-    dispatch_queue_t tQueue = dispatch_queue_create("queue_Group" , DISPATCH_QUEUE_PRIORITY_DEFAULT);
+    dispatch_queue_t tQueue = dispatch_queue_create("queue_Group" , DISPATCH_QUEUE_CONCURRENT);
     for (short i = 0; i < 10; i++) {
         id player = _arrayPlayer[i];
         if ([player isKindOfClass:[AVAudioPlayer class]]) {
             AVAudioPlayer *audioPlayer = (AVAudioPlayer *) player ;
             if (audioPlayer.volume <= 0.0f) continue;
             dispatch_group_async(tGroup, tQueue, ^{
-                _CC_Safe_Async_Block(^{
-                    switch (option) {
-                        case CCPlayOptionStop:{
-                            [audioPlayer stop];
-                        }break;
-                        case CCPlayOptionPlay:{
-                            [audioPlayer play];
-                        }break;
-                        case CCPlayOptionPause:{
-                            [audioPlayer pause];
-                        }
-                            
-                        default:
-                            break;
-                    }
-                });
+                switch (option) {
+                    case CCPlayOptionPlay:{
+                        [audioPlayer play];
+                    }break;
+                    case CCPlayOptionPause:{
+                        [audioPlayer pause];
+                    }break;
+                    case CCPlayOptionStop:{
+                        [audioPlayer stop];
+                    }break;
+                        
+                    default:
+                        break;
+                }
             });
         }
     }
     dispatch_group_notify(tGroup, dispatch_get_main_queue(), ^{
-        if (block) {
-            _CC_Safe_Async_Block(^{
-                block();
-            });
-        }
+        _CC_Safe_Async_Block(block , ^{
+            block();
+        });
     });
 }
 
@@ -121,11 +115,9 @@ static CCAudioHandler *_handler = nil;
     }
     if (integerSeconds == 0) {
         _integerCountTime = 0;
-        if (block) {
-            _CC_Safe_Async_Block(^{
-                block(YES , @"00 : 00");
-            });
-        }
+        _CC_Safe_Async_Block(block , ^{
+            block(YES , @"00 : 00");
+        });
         return ;
     }
     _integerCountTime = integerSeconds;
@@ -194,11 +186,9 @@ static CCAudioHandler *_handler = nil;
         dispatch_source_cancel(_timer);
         _timer = nil;
     }
-    if (_block) {
-        _CC_Safe_Async_Block(^{
-            pSelf.block(isStop , [pSelf ccFormatteTime:pSelf.integerCountTime]);
-        });
-    }
+    _CC_Safe_Async_Block(_block , ^{
+        pSelf.block(isStop , [pSelf ccFormatteTime:pSelf.integerCountTime]);
+    });
 }
 
 - (NSString *) ccFormatteTime : (NSInteger) integerSeconds {

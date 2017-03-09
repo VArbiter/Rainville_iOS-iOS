@@ -18,7 +18,7 @@ NSString * const _CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_ = @"CC_APP_DID_RECEIVE
 
 @interface CCCommonDef ()
 
-void _CC_SAFE_BLOCK(dispatch_block_t block , BOOL isSync);
+void _CC_SAFE_BLOCK(id block_nil , dispatch_block_t block , BOOL isSync);
 
 @end
 
@@ -66,18 +66,18 @@ UIImage * _CC_Image(NSString * stringImageName) {
     return _CC_ImageWithCache(stringImageName, YES);
 }
 
-void _CC_Safe_Sync_Block(dispatch_block_t block) {
-    _CC_SAFE_BLOCK(block, YES);
+void _CC_Safe_Sync_Block(id block_nil , dispatch_block_t block) {
+    _CC_SAFE_BLOCK(block_nil , block , YES);
 }
 
-void _CC_Safe_Async_Block(dispatch_block_t block) {
-    _CC_SAFE_BLOCK(block, NO);
+void _CC_Safe_Async_Block(id block_nil , dispatch_block_t block) {
+    _CC_SAFE_BLOCK(block_nil , block , NO);
 }
 
 #pragma mark - Private Function (s) && Method (s)
 
-void _CC_SAFE_BLOCK(dispatch_block_t block , BOOL isSync) {
-    if (!block) return;
+void _CC_SAFE_BLOCK(id block_nil , dispatch_block_t block , BOOL isSync) {
+    if (!block || !block_nil) return;
     if ([NSThread isMainThread]) {
         block();
     } else {

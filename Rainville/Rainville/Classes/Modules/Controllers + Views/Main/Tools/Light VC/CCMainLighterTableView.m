@@ -25,10 +25,8 @@
 - (instancetype) initWithReloadblock : (void(^)()) block {
     if (self = [super init]) {
         [self ccDefaultSettings];
-        _CC_Safe_Async_Block(^{
-            if (block) {
-                block();
-            }
+        _CC_Safe_Async_Block(block, ^{
+            block();
         });
     }
     return self;
@@ -107,8 +105,9 @@ _CC_DETECT_DEALLOC_
     if (_integerSelectedIndex == indexPath.row) return ;
     _integerSelectedIndex = indexPath.row ;
     ccWeakSelf;
-    _CC_Safe_Async_Block(^{
+    _CC_Safe_Async_Block(_block, ^{
         pSelf.block(indexPath.row);
+
     });
 }
 
