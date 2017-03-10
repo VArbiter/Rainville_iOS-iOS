@@ -10,6 +10,6 @@
 
 @interface CCBaseViewController : UIViewController
 
-@property (nonatomic , strong) NSString * stringControllerName ;
+@property (nonatomic , strong , readonly) NSString * stringControllerName ;
 
 @end

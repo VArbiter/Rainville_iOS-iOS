@@ -46,9 +46,7 @@
     [self ccInitViewSettings];
 }
 
-- (void) ccDefaultSettings {
-    self.stringControllerName = NSStringFromClass([self class]) ;
-    
+- (void) ccDefaultSettings {    
     _dictionaryTheme = [CCAudioPreset ccDefaultAudioSet];
     _handler = [CCAudioHandler sharedAudioHandler];
     

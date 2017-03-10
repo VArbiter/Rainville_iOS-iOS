@@ -14,6 +14,17 @@
 
 #import "CCLocalizedHelper.h"
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 100000
+#define _CC_AUTO_ 1
+#else
+#define _CC_AUTO_ 0
+#endif
+
+typedef NS_ENUM(NSInteger , CCTimerType) {
+    CCTimerTypeFade = 0 ,
+    CCTimerTypeAutoStop
+};
+
 static CCAudioHandler *_handler = nil;
 
 @interface CCAudioHandler ()
@@ -31,6 +42,12 @@ static CCAudioHandler *_handler = nil;
 - (id) ccAudioPlayerSetWithPath : (NSURL *) urlPath ;
 - (void) ccTimerAction : (dispatch_group_t) sender ;
 - (NSString *) ccFormatteTime : (NSInteger) integerSeconds ;
+
+- (void) ccFadeWithVolume : (CGFloat) volume
+               withPlayer : (AVAudioPlayer *) audioPlayer ;
+- (dispatch_source_t) ccInitialTimer : (CGFloat) floatTimeSep
+                            withType : (CCTimerType) type ;
+
 
 @end
 
@@ -123,7 +140,10 @@ static CCAudioHandler *_handler = nil;
     _integerCountTime = integerSeconds;
     _block = [block copy];
     
-    ccWeakSelf;
+//    ccWeakSelf;
+    _timer = [self ccInitialTimer:1.0f
+                         withType:CCTimerTypeAutoStop];
+    /*
     __block dispatch_group_t group = dispatch_group_create(); // 若有 , 保持队列同步 .
     dispatch_group_enter(group);
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -133,6 +153,7 @@ static CCAudioHandler *_handler = nil;
         [pSelf ccTimerAction:group];
     });
     dispatch_resume(_timer);
+     */
 }
 
 
@@ -199,6 +220,46 @@ static CCAudioHandler *_handler = nil;
         return ccStringFormat(@"%02ld : %02ld", fMinutes , fSeconds);
     }
     return ccStringFormat(@"%02ld : %02ld : %02ld",fHours , fMinutes , fSeconds);
+}
+
+- (void) ccFadeWithVolume : (CGFloat) volume
+               withPlayer : (AVAudioPlayer *) audioPlayer {
+#if _CC_AUTO_
+    [audioPlayer setVolume:volume
+              fadeDuration:.3f];
+#else
+    [self ccInitialTimer:.01f
+                withType:CCTimerTypeFade];
+#endif
+}
+
+- (dispatch_source_t) ccInitialTimer : (CGFloat) floatTimeSep
+                            withType : (CCTimerType) type {
+    ccWeakSelf;
+    __block dispatch_group_t group = dispatch_group_create(); // 若有 , 保持队列同步 .
+    dispatch_group_enter(group);
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), floatTimeSep * NSEC_PER_SEC, 0);
+    dispatch_source_set_event_handler(timer, ^{
+        switch (type) {
+            case CCTimerTypeFade:{
+#warning TODO >>>
+                /*
+                    如果 , 使用音量递减的方式 , 那么volume为1.0的AudioPlayer 将会在1秒后暂停/结束 .
+                    但是如果不使用 , 那么音频的淡入淡出在10.0下如何实现 ?
+                 */
+            }break;
+            case CCTimerTypeAutoStop:{
+                [pSelf ccTimerAction:group];
+            }break;
+                
+            default:
+                break;
+        }
+    });
+    dispatch_resume(timer);
+    return timer;
 }
 
 #pragma mark - System

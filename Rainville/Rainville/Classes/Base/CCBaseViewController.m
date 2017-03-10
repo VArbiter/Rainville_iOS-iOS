@@ -24,4 +24,9 @@
     
 }
 
+#pragma mark - Getter
+- (NSString *) stringControllerName {
+    return NSStringFromClass([self class]) ;
+}
+
 @end
