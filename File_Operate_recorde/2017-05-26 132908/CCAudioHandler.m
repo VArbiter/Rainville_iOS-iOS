@@ -43,11 +43,12 @@ static CCAudioHandler *_handler = nil;
 - (void) ccTimerAction : (dispatch_group_t) sender ;
 - (NSString *) ccFormatteTime : (NSInteger) integerSeconds ;
 
+@property (nonatomic , strong) CADisplayLink *displayLink;
 - (void) ccFadeWithVolume : (CGFloat) volume
                withPlayer : (AVAudioPlayer *) audioPlayer ;
 - (dispatch_source_t) ccInitialTimer : (CGFloat) floatTimeSep
                             withType : (CCTimerType) type ;
-
+- (void) ccAudioFadeAction : (CADisplayLink *) dispalyLink ;
 
 @end
 
@@ -81,12 +82,13 @@ static CCAudioHandler *_handler = nil;
 - (void) ccPausePlayingWithCompleteHandler : (dispatch_block_t) block
                                 withOption : (CCPlayOption) option {
     dispatch_group_t tGroup = dispatch_group_create() ;
-    dispatch_queue_t tQueue = dispatch_queue_create("queue_Group" , DISPATCH_QUEUE_CONCURRENT);
     for (short i = 0; i < 10; i++) {
         id player = _arrayPlayer[i];
         if ([player isKindOfClass:[AVAudioPlayer class]]) {
             AVAudioPlayer *audioPlayer = (AVAudioPlayer *) player ;
             if (audioPlayer.volume <= 0.0f) continue;
+            const char * c = ccStringFormat(@"queue_Group_%d",i).UTF8String;
+            dispatch_queue_t tQueue = dispatch_queue_create(c , DISPATCH_QUEUE_CONCURRENT);
             dispatch_group_async(tGroup, tQueue, ^{
                 switch (option) {
                     case CCPlayOptionPlay:{
@@ -225,12 +227,21 @@ static CCAudioHandler *_handler = nil;
 - (void) ccFadeWithVolume : (CGFloat) volume
                withPlayer : (AVAudioPlayer *) audioPlayer {
 #if _CC_AUTO_
-    [audioPlayer setVolume:volume
-              fadeDuration:.3f];
+//    [audioPlayer setVolume:volume
+//              fadeDuration:.3f];
 #else
-    [self ccInitialTimer:.01f
-                withType:CCTimerTypeFade];
+//    [self ccInitialTimer:.01f
+//                withType:CCTimerTypeFade];
 #endif
+    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self
+                                                             selector:@selector(ccAudioFadeAction:)];
+    [displayLink addToRunLoop:[NSRunLoop currentRunLoop]
+                        forMode:NSRunLoopCommonModes];
+    self.displayLink = displayLink;
+}
+
+- (void) ccAudioFadeAction : (CADisplayLink *) dispalyLink {
+    
 }
 
 - (dispatch_source_t) ccInitialTimer : (CGFloat) floatTimeSep
