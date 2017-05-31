@@ -10,7 +10,7 @@
 
 #import "CCMainHandler.h"
 #import "CCLocalizedHelper.h"
-#import "CCAudioHandlerLocal.h"
+#import "CCAudioHandler.h"
 #import "CCAudioPreset.h"
 
 #import "CCMainScrollCell.h"
@@ -24,7 +24,7 @@
 @property (nonatomic , strong) UITableView *tableView ;
 @property (nonatomic , strong) CCMainScrollCell *cell;
 @property (nonatomic , strong) CCMainHeaderView *headerView ;
-@property (nonatomic , strong) CCAudioHandlerLocal *handler ;
+@property (nonatomic , strong) CCAudioHandler *handler ;
 @property (nonatomic , strong) NSDictionary *dictionaryTheme;
 
 - (void) ccDefaultSettings ;
@@ -48,7 +48,7 @@
 
 - (void) ccDefaultSettings {    
     _dictionaryTheme = [CCAudioPreset ccDefaultAudioSet];
-    _handler = [CCAudioHandlerLocal sharedAudioHandlerLocal];
+    _handler = [CCAudioHandler sharedAudioHandler];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(ccNotificationRemoteControl:)
@@ -75,6 +75,7 @@
     [_cell ccConfigureCellWithHandler:^(NSString *stringKey, NSInteger integerSelectedIndex) {
         [pSelf ccClickedAction:integerSelectedIndex
                        withKey:stringKey];
+        [pSelf.cell ccSetTimer: YES];
     }];
 }
 

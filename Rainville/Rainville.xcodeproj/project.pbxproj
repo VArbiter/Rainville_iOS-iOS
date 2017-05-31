@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370E98571EDE6088007E2692 /* CCAudioHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 370E98561EDE6088007E2692 /* CCAudioHandler.m */; };
 		3725676B1DFE84110035E193 /* CCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 372567591DFE84110035E193 /* CCAppDelegate.m */; };
 		3725676C1DFE84110035E193 /* CCCommonDef.m in Sources */ = {isa = PBXBuildFile; fileRef = 3725675D1DFE84110035E193 /* CCCommonDef.m */; };
 		3725676F1DFE84110035E193 /* elegant.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 372567671DFE84110035E193 /* elegant.ttf */; };
@@ -62,7 +63,6 @@
 		37F5BD6C1E201BBA00699E9F /* CCCountDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5BD6B1E201BBA00699E9F /* CCCountDownView.m */; };
 		37F5BD6E1E201BD300699E9F /* CCCountDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F5BD6D1E201BD300699E9F /* CCCountDownView.xib */; };
 		37F5BD711E202AA900699E9F /* UIPickerView+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5BD701E202AA900699E9F /* UIPickerView+CCExtension.m */; };
-		37FC03EE1ED7D20200743F2C /* CCAudioHandlerLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC03ED1ED7D20200743F2C /* CCAudioHandlerLocal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +90,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		370E98551EDE6088007E2692 /* CCAudioHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAudioHandler.h; sourceTree = "<group>"; };
+		370E98561EDE6088007E2692 /* CCAudioHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAudioHandler.m; sourceTree = "<group>"; };
 		372567581DFE84110035E193 /* CCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppDelegate.h; sourceTree = "<group>"; };
 		372567591DFE84110035E193 /* CCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppDelegate.m; sourceTree = "<group>"; };
 		3725675C1DFE84110035E193 /* CCCommonDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCommonDef.h; sourceTree = "<group>"; };
@@ -177,8 +179,6 @@
 		37F5BD6D1E201BD300699E9F /* CCCountDownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCountDownView.xib; sourceTree = "<group>"; };
 		37F5BD6F1E202AA900699E9F /* UIPickerView+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPickerView+CCExtension.h"; sourceTree = "<group>"; };
 		37F5BD701E202AA900699E9F /* UIPickerView+CCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPickerView+CCExtension.m"; sourceTree = "<group>"; };
-		37FC03EC1ED7D20200743F2C /* CCAudioHandlerLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAudioHandlerLocal.h; sourceTree = "<group>"; };
-		37FC03ED1ED7D20200743F2C /* CCAudioHandlerLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAudioHandlerLocal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,8 +447,8 @@
 		37BA5DBF1E1BC30000827DC5 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				37FC03EC1ED7D20200743F2C /* CCAudioHandlerLocal.h */,
-				37FC03ED1ED7D20200743F2C /* CCAudioHandlerLocal.m */,
+				370E98551EDE6088007E2692 /* CCAudioHandler.h */,
+				370E98561EDE6088007E2692 /* CCAudioHandler.m */,
 				376596A81E1EE1BF001CE366 /* CCAudioPreset.h */,
 				376596A91E1EE1BF001CE366 /* CCAudioPreset.m */,
 			);
@@ -694,7 +694,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				37BA5DCE1E1BC30000827DC5 /* CCLocalizedHelper.m in Sources */,
-				37FC03EE1ED7D20200743F2C /* CCAudioHandlerLocal.m in Sources */,
 				372567741DFE84280035E193 /* CCBaseViewController.m in Sources */,
 				37BA5DCF1E1BC30000827DC5 /* CCMainHandler.m in Sources */,
 				372567781DFE84590035E193 /* CCMainViewController.m in Sources */,
@@ -702,6 +701,7 @@
 				37F5BD611E1FFD9700699E9F /* CCAuthorInfoView.m in Sources */,
 				37F5BD711E202AA900699E9F /* UIPickerView+CCExtension.m in Sources */,
 				37BA5DB81E1BAEA800827DC5 /* UILabel+CCExtension.m in Sources */,
+				370E98571EDE6088007E2692 /* CCAudioHandler.m in Sources */,
 				37BA5DD21E1BC34500827DC5 /* CCMainLighterTableView.m in Sources */,
 				37F5BD5D1E1FFD6800699E9F /* CCMainHeaderView.m in Sources */,
 				3725676C1DFE84110035E193 /* CCCommonDef.m in Sources */,
