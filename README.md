@@ -1,7 +1,7 @@
 # Rainville_iOS-iOS
 Rainville For iOS /  聆雨 iOS 版本
 
-~~## 目前尚未开发完成 . ~~
+## 开发进度 . 
 更新 : 2017年05月31日11:28:06 主体开发完成 . 时间拖得太久太久了 . 一直很忙 ... 
 
 #### 聆雨原创_GITHUB : [feelinglucky](https://github.com/feelinglucky/Rainville/)
