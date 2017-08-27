@@ -303,15 +303,13 @@ static NSInteger _integerDisplayCount = 0 ;
     self.operationQueue.maxConcurrentOperationCount = arrayWavFile.count;
     
     for (NSURL *url in arrayWavFile) {
-        [self.operationQueue addOperationWithBlock:^{
-            NSError *error = nil;
-            AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:url
-                                                                           error:&error];
-            player.volume = 0.0f ;
-            player.numberOfLoops = -1 ;
-            [_arrayAudioPlayer addObject:error ? NSNull.null : player];
-                [player prepareToPlay];
-        }];
+        NSError *error = nil;
+        AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:url
+                                                                       error:&error];
+        player.volume = 0.0f ;
+        player.numberOfLoops = -1 ;
+        [_arrayAudioPlayer addObject:error ? NSNull.null : player];
+        [player prepareToPlay];
     }
 
     return _arrayAudioPlayer;
