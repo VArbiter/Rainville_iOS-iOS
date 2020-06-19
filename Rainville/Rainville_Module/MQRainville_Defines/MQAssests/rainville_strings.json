@@ -1,0 +1,199 @@
+{
+    "display":{
+        "en": {
+            "app": {
+                "app-name": "Rainville",
+                "app-description": "The Sound of Rain, without the wet feet.",
+                "app-poem": "Rain, Rain, Rain, \ncome again and again. \n\nIn the winter, in the summer and in spring.\n \nCome with joy, \nfall with happiness and go with sorrow.\n\nRain, Rain, Rain,\ncome again and again\n…"
+            },
+            "action": {
+                "play": "Play",
+                "stop": "Stop",
+                "confirm": "Confirm",
+                "cancel": "Cancel",
+                "timer-before": "Auto stopped after",
+                "timer-after": "minutes",
+                "version": "Version"
+            },
+            "hint": {
+                "keep-running": "Rain, Rain, Rain, \ncome again and again…",
+                "headphone": "Please use headphone for a better experience",
+                "focus-play-remain": "Click %d times to play without headphone.",
+                "play-with-speaker": "Now you can play without headphone",
+                "thanks": "Thanks for using Rainville!",
+                "summary": "\n\nYou can straight tap the red button \nto enable playing from speakers.",
+                "panel-intro": "Now, you have more choices",
+                "panel-intro-summary": "\n\nYou can select a series type of rain, \n and swipe the panel to set a sleep timer."
+            }
+        },
+        "zh-hans": {
+            "app": {
+                "app-name": "聆雨",
+                "app-description": "且听细雨，勿湿衣襟",
+                "app-poem": "虞美人·听雨\n蒋捷（宋）\n\n少年听雨歌楼上，红烛昏罗帐。\n壮年听雨客舟中，江阔云低断雁叫西风。\n\n而今听雨僧庐下，鬓已星星也。\n悲欢离合总无情，一任阶前点滴到天明。"
+            },
+            "action": {
+                "play": "播放",
+                "stop": "停止",
+                "confirm": "确认",
+                "cancel": "取消",
+                "timer-before": "设定停止播放在",
+                "timer-after": "分钟后",
+                "version": "版本"
+            },
+            "hint": {
+                "keep-running": "且听细雨，勿湿衣襟",
+                "headphone": "使用耳机获得更好的体验",
+                "focus-play-remain": "再点击 %d 次使用扬声器播放",
+                "play-with-speaker": "现在您可以使用扬声器播放了",
+                "thanks": "感谢您使用「聆雨」",
+                "summary": "\n\n您可以连续多次点击红色的耳机按钮，\n开启直接使用扬声器播放选项。",
+                "panel-intro": "现在，您有更多的选择",
+                "panel-intro-summary": "\n\n您可以选择多种不同类型的雨声、\n左右滑动可以设置定时播放选项。"
+            }
+        }
+    },
+    "timers":[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 90, 120],
+    "data-volume": {
+        "default": {
+            "ol": 0,
+            "en": "Default",
+            "zh-hans": "默认",
+            "volume": [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3],
+            "extra":"pink-noise"
+        },
+        "fairy-rain": {
+            "ol": 1,
+            "en": "Fairy Rain",
+            "zh-hans": "细雨",
+            "volume": [0, 0, 0, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
+        },
+        "bedroom": {
+            "ol": 2,
+            "en": "Bedroom",
+            "zh-hans": "庭院深深",
+            "volume": [0, 0, 0, 0, 0.1, 0.2, 0.3, 0.2, 0.1, 0]
+        },
+        "under-the-porch": {
+            "ol": 3,
+            "en": "Under The Porch",
+            "zh-hans": "门厅走廊",
+            "volume": [0, 0.3, 0.25, 0.25, 0.3, 0.25, 0.2, 0.15, 0.1, 0]
+        },
+        "distant-storm": {
+            "ol": 4,
+            "en": "Distant Storm",
+            "zh-hans": "暴雨将至",
+            "volume": [0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.2, 0.3, 0.2, 0.1]
+        },
+        "getting-wet": {
+            "ol": 5,
+            "en": "Getting Wet",
+            "zh-hans": "润雨",
+            "volume": [0.7, 0.5, 0.2, 0.35, 0.55, 0.35, 0.3, 0.5, 0.2, 0.2]
+        },
+        "only-rumble": {
+            "ol": 6,
+            "en": "Only Rumble",
+            "zh-hans": "夏日雷雨",
+            "volume": [0.7, 0.5, 0.15, 0.15, 0.15, 0.15, 0.1, 0.1, 0, 0]
+        },
+        "under-the-leaves": {
+            "ol": 7,
+            "en": "Under The Leaves",
+            "zh-hans": "荷塘",
+            "volume": [0.3, 0.3, 0, 0, 0, 0.3, 0, 0, 0.1, 0.2]
+        },
+        "dark-rain": {
+            "ol": 8,
+            "en": "Dark Rain",
+            "zh-hans": "乌云压顶",
+            "volume": [0, 0.5, 0.4, 0.3, 0.2, 0, 0, 0.1, 0.1, 0]
+        },
+        "jungle-lodge": {
+            "ol": 9,
+            "en": "Jungle Lodge",
+            "zh-hans": "丛林",
+            "volume": [0.7, 0, 0.2, 0, 0.25, 0, 0.25, 0, 0.2, 0]
+        },
+        "brown-noise": {
+            "ol": 10,
+            "en": "Brown Noise",
+            "zh-hans": "棕噪音",
+            "volume": [0.65, 0.6, 0.55, 0.5, 0.45, 0.4, 0.35, 0.3, 0.25, 0.2]
+        },
+        "pink-noise": {
+            "ol": 11,
+            "en": "Pink Noise",
+            "zh-hans": "粉噪音",
+            "volume": [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3]
+        },
+        "white-noise": {
+            "ol": 12,
+            "en": "White Noise",
+            "zh-hans": "白噪音",
+            "volume": [0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65]
+        },
+        "grey-noise": {
+            "ol": 13,
+            "en": "Grey Noise",
+            "zh-hans": "灰噪音",
+            "volume": [0.5, 0.45, 0.4, 0.3, 0.3, 0.3, 0.25, 0.25, 0.3, 0.35]
+        },
+        "hz-60": {
+            "ol": 14,
+            "en": "60 Hz",
+            "zh-hans": "60 赫兹",
+            "volume": [0.4, 0.5, 0.4, 0, 0, 0, 0, 0, 0, 0]
+        },
+        "hz-125": {
+            "ol": 15,
+            "en": "125 Hz",
+            "zh-hans": "125 赫兹",
+            "volume": [0, 0.4, 0.5, 0.4, 0, 0, 0, 0, 0, 0]
+        },
+        "hz-250": {
+            "ol": 16,
+            "en": "250 Hz",
+            "zh-hans": "249+1 赫兹",
+            "volume": [0, 0, 0.4, 0.5, 0.4, 0, 0, 0, 0, 0]
+        },
+        "hz-500": {
+            "ol": 17,
+            "en": "500 Hz",
+            "zh-hans": "500 赫兹",
+            "volume": [0, 0, 0, 0.4, 0.5, 0.4, 0, 0, 0, 0]
+        },
+        "hz-1k": {
+            "ol": 18,
+            "en": "1000 Hz",
+            "zh-hans": "1000 赫兹",
+            "volume": [0, 0, 0, 0, 0.4, 0.5, 0.4, 0, 0, 0]
+        },
+        "hz-2k": {
+            "ol": 19,
+            "en": "2000 Hz",
+            "zh-hans": "2000 赫兹",
+            "volume": [0, 0, 0, 0, 0, 0.4, 0.5, 0.4, 0, 0]
+        },
+        "hz-4k": {
+            "ol": 20,
+            "en": "4000 Hz",
+            "zh-hans": "4000 赫兹",
+            "volume": [0, 0, 0, 0, 0, 0, 0.4, 0.5, 0.4, 0]
+        },
+        "hz-8k": {
+            "ol": 21,
+            "en": "8000 Hz",
+            "zh-hans": "8000 赫兹",
+            "volume": [0, 0, 0, 0, 0, 0, 0, 0.4, 0.5, 0.6]
+        },
+        "random":{
+            "ol": 22,
+            "en": "Random",
+            "zh-hans":"随机",
+            "volume":[],
+            "extra":"random"
+        }
+    }
+}

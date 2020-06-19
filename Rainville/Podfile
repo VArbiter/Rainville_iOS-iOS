@@ -1,0 +1,13 @@
+platform :ios, '11.0'
+
+# 新版本 xcode 仍然没有解决 build 会跳过 framework 内部文件变更检查的问题
+install! 'cocoapods', :disable_input_output_paths => true
+
+target 'Rainville' do
+  use_frameworks!
+
+  pod 'Rainville_Module' , :path => './'
+#  pod 'MQExtensionKit' , '~> 4.1.9'
+#  pod 'Masonry', '~> 1.1.0'
+
+end
