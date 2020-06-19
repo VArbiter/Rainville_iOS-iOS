@@ -8,6 +8,8 @@ Rainville For iOS /  聆雨 iOS 版本
 包括界面的变化 , 机型的适配 , 新特性的应用等 .
 这个拖得太久 ... 三年过去了 ... 
 
+更新 : 2020年06月19日20:02:41 版本 2.0 上线 . 同时 [**web 版本聆雨**](https://varbiter.github.io/Rainville-web/dist/index.html#/)也已于稍前时候上线 
+
 #### 聆雨原创_GITHUB : [feelinglucky](https://github.com/feelinglucky/Rainville/)
 
 ##### 为什么要写 聆雨_iOS 版本
@@ -43,7 +45,7 @@ Rainville For iOS /  聆雨 iOS 版本
 
 #### 注意 : 聆雨完全遵循 __*GPL*__ 协议
 
-#### 感谢 [明城](http://www.gracecode.com) (原作者) 在我开发 iOS 版本`聆雨`时给我的支持和技术指导 
+#### 感谢 [明城](http://www.gracecode.com) (原作者) 在我开发 iOS 版本**聆雨**时给我的支持和技术指导 
 
 __*Contact*__ : [ElwinFrederick](elwinfrederick@163.com) 
 
