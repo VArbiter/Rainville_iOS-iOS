@@ -1,0 +1,8 @@
+#!/bin/bash
+CMD_PATH=`dirname $0`
+cd $CMD_PATH/Rainville
+pod install 
+open Rainville.xcworkspace
+echo ""
+echo "  🚀🚀🚀 if project can not be opend , double click \"bootstrap_update\" instead."
+exit 0

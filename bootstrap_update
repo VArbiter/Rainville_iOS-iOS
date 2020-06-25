@@ -1,0 +1,6 @@
+#!/bin/bash
+CMD_PATH=`dirname $0`
+cd $CMD_PATH/Rainville
+pod install --repo-update --verbose
+open Rainville.xcworkspace
+exit 0
